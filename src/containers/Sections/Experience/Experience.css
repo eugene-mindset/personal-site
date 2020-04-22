@@ -1,0 +1,6 @@
+#exp {
+  color: var(--accent-color-2);
+  background-color: var(--extra-color-6);
+  --text-color: var(--background-color-1);
+  --accent-color: var(--accent-color-2);
+}

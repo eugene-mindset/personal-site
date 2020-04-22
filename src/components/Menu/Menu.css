@@ -1,0 +1,60 @@
+.menu {
+  width: 15%; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  left: 0px;
+  z-index: 1; /* Stay on top */
+
+  display: flex;
+  flex-direction: column;
+
+  top: 50%; /* Stay at the top */
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  background-color: none;
+  padding: 10px 0px 10px 0px;
+
+  color: var(--extra-color-2);
+
+  font-size: 20px;
+  letter-spacing: 5px;
+}
+
+.menu ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+.menu a {
+  left: 0px;
+  padding-left: 0px;
+  
+  position: relative;
+  text-align: left;
+}
+
+.menu li {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+a[href="#title"] li, a[href="#about"] li, a[href="#exp"] li {
+  transition: var(--hover-speed);
+}
+
+a[href="#gen"] li, a[href="#soc"] li, a[href="#edu"] li, a[href="#work"] li {
+  margin-left: 20px;
+  transition: var(--hover-speed);
+}
+
+.c1 {
+  --accent-color: var(--accent-color-1);
+}
+
+.c2 {
+  --accent-color: var(--accent-color-2);
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+

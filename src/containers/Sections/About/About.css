@@ -1,0 +1,7 @@
+#about {
+  color: var(--accent-color-1);
+  background-color: var(--background-color-2);
+  --text-color: var(--background-color-1);
+  --accent-color: var(--accent-color-1);
+  left:100vw;
+}
