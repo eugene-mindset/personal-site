@@ -6,21 +6,20 @@ import Experience from '../Sections/Experience/Experience';
 
 import Menu from '../../components/Menu/Menu'
 
-
 import './App.css';
 
-import Fade from 'react-reveal/Fade';
 
 
 function App() {
+  const resumeData = require('./../../resume.json');
+  console.log(resumeData);
+
   return (
     <div className="App">
       <Menu/>
-      <Fade right>
-        <Title/>
-        <About/>
-        <Experience/>
-      </Fade>
+      <Title/>
+      <About/>
+      <Experience/>
     </div>
   );
 }

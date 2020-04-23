@@ -12,7 +12,7 @@ export const Education = () => (
       <br></br>
       <b>Computer Science, B.S.</b><span className="right"><i>Baltimore, Maryland</i></span>
 
-      <ul>
+      <ul className="fancylist">
         Relevant Course Work
         <li>Introductory Programming In Java<span className="hidden">EN.601.107</span></li>
         <li>A Hands-On Introduction to MATLAB<span className="hidden">EN.553.282</span></li>
@@ -43,7 +43,7 @@ export const Work = () => (
 
 export const Experience = () => (
   <div className="section" id="exp">
-    <h3>Experience<hr></hr></h3>
+    <h3>Experience</h3>
     <Education/>
     <Work/>
   </div>

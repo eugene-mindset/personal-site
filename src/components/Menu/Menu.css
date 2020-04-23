@@ -1,49 +1,36 @@
 .menu {
-  width: 15%; /* Set the width of the sidebar */
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-  left: 0px;
-  z-index: 1; /* Stay on top */
-
+  width: auto;
+  height: 100%;
+  left: 50px;
+  position: fixed;
+  z-index: 1;
   display: flex;
-  flex-direction: column;
+  flex-grow: 4;
 
-  top: 50%; /* Stay at the top */
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  background-color: none;
-  padding: 10px 0px 10px 0px;
 
-  color: var(--extra-color-2);
-
-  font-size: 20px;
+  color: var(--extra-color-5);
   letter-spacing: 5px;
+  background-color: var(--extra-color-4);
 }
 
 .menu ul {
-  margin: 0px;
-  padding: 0px;
+  width: 100%;
+  padding: 0px 10px 0px 10px;
+  vertical-align: middle;
 }
 
 .menu a {
-  left: 0px;
-  padding-left: 0px;
-  
+  margin: 0px;
   position: relative;
   text-align: left;
+  transition: var(--hover-speed);
 }
 
 .menu li {
+  list-style: none;
   margin-top: 10px;
   margin-bottom: 10px;
-}
-
-a[href="#title"] li, a[href="#about"] li, a[href="#exp"] li {
-  transition: var(--hover-speed);
-}
-
-a[href="#gen"] li, a[href="#soc"] li, a[href="#edu"] li, a[href="#work"] li {
-  margin-left: 20px;
-  transition: var(--hover-speed);
+  text-align: right;
 }
 
 .c1 {

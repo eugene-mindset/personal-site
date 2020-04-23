@@ -1,0 +1,36 @@
+{
+    "edu": {
+        "jhu": {
+            "name": "Johns Hopkins University",
+            "degree": "Computer Science, B.S.",
+            "startDate": "Aug 2017",
+            "endDate": "",
+            "location": "Baltimore, MD",
+            "courseWork": {
+                "displayFirstNCourses": 10,
+                "courses": {
+                    "EN.601.107": "Introductory Programming In Java",
+                    "EN.553.282": "A Hands-On Introduction to MATLAB",
+                    "EN.601.220": "Intermediate Programming",
+                    "EN.601.226": "Data Structures",
+                    "EN.601.231": "Automata & Computation Theory",
+                    "EN.601.229": "Computer System Fundamentals",
+                    "EN.601.433": "Intro Algorithms",
+                    "EN.601.457": "Computer Graphics",
+                    "EN.601.464": "Artificial Intelligence",
+                    "EN.601.475": "Machine Learning",
+                    "EN.601.421": "Object Oriented Software Engineering",
+                    "EN.601.414": "Computer Networks",
+                    "EN.601.461": "Computer Vision"
+                }
+            }
+        },
+        "ohs": {
+            "name": "Overbrook High School",
+            "degree": "",
+            "startDate": "Sept 2013",
+            "endDate": "June 2017",
+            "location": "Pine Hill, NJ"
+        }
+    }
+}

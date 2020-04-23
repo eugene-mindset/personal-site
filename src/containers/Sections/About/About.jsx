@@ -1,5 +1,6 @@
 import React from 'react';
 import './About.css';
+import Fade from 'react-reveal/Fade';
 
 
 export const Socials = () => (
@@ -22,9 +23,11 @@ export const General = () => (
 
 export const About = () => (
   <div className="section" id="about">
-    <h3>About<hr></hr></h3>
-    <General/>
-    <Socials/>
+    <Fade>
+      <h3>About</h3>
+      <General/>
+      <Socials/>
+    </Fade>
   </div>
 );
 

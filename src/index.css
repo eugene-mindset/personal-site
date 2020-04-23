@@ -1,4 +1,4 @@
-html, body, #root {
+html, body  {
   --accent-color-1: #2ef7e6;
   --accent-color-2: #e34f8c;
   --background-color-1: #f1fbfd;
@@ -17,4 +17,5 @@ html, body, #root {
 
   background-color: var(--background-color-2);
   scroll-behavior: smooth;
+
 }
