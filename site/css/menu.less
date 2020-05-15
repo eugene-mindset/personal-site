@@ -4,13 +4,13 @@
   left: 50px;
   position: fixed;
   z-index: 1;
-  display: flex;
+  display: none;
   flex-grow: 4;
 
 
-  color: var(--extra-color-5);
+  color: @extra-color-6;
   letter-spacing: 5px;
-  background-color: var(--extra-color-4);
+  background-color: @extra-color-4;
 }
 
 .menu ul {
@@ -23,7 +23,7 @@
   margin: 0px;
   position: relative;
   text-align: left;
-  transition: var(--hover-speed);
+  transition: @hover-speed;
 }
 
 .menu li {
@@ -33,15 +33,8 @@
   text-align: right;
 }
 
-.c1 {
-  --accent-color: var(--accent-color-1);
+@media only screen and (min-width: 1000px) {
+  .menu {
+    display: flex;
+  }
 }
-
-.c2 {
-  --accent-color: var(--accent-color-2);
-}
-
-a:hover {
-  color: var(--accent-color);
-}
-

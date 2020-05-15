@@ -1,7 +1,10 @@
 {
+    "name": "Eugene Asare",
+    "subtitle": "Studying CS @ JHU",
     "edu": {
         "jhu": {
             "name": "Johns Hopkins University",
+            "link": "https://www.jhu.edu",
             "degree": "Computer Science, B.S.",
             "startDate": "Aug 2017",
             "endDate": "",
@@ -27,7 +30,7 @@
         },
         "ohs": {
             "name": "Overbrook High School",
-            "degree": "",
+            "degree": "High School Diploma",
             "startDate": "Sept 2013",
             "endDate": "June 2017",
             "location": "Pine Hill, NJ"

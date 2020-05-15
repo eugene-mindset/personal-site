@@ -1,0 +1,185 @@
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('IBM Plex Sans'), local('IBMPlexSans'), url(https://fonts.gstatic.com/s/ibmplexsans/v7/zYXgKVElMYYaJe8bpLHnCwDKhdHeEA.ttf) format('truetype');
+}
+.menu {
+  width: auto;
+  height: 100%;
+  left: 50px;
+  position: fixed;
+  z-index: 1;
+  display: none;
+  flex-grow: 4;
+  color: #4a4e69;
+  letter-spacing: 5px;
+  background-color: #d5cad6;
+}
+.menu ul {
+  width: 100%;
+  padding: 0px 10px 0px 10px;
+  vertical-align: middle;
+}
+.menu a {
+  margin: 0px;
+  position: relative;
+  text-align: left;
+  transition: 0.5s;
+}
+.menu li {
+  list-style: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: right;
+}
+@media only screen and (min-width: 1000px) {
+  .menu {
+    display: flex;
+  }
+}
+.section#title {
+  padding-top: 0px;
+  background-color: #f1fbfd;
+  color: #f53e8a;
+  min-height: 100vh;
+  text-align: center;
+}
+.section#about {
+  background-color: #25253d;
+  --text-color: #f1fbfd;
+  --accent-color: #2ef7e6;
+}
+.section#exp {
+  background-color: #4a4e69;
+  --text-color: #f1fbfd;
+  --accent-color: #f53e8a;
+}
+:root {
+  font-family: "IBM Plex Sans", sans-serif;
+  background-color: #25253d;
+  color: #f1fbfd;
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  display: flex;
+  flex-flow: column;
+  font-weight: 100;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+.center {
+  margin-top: auto;
+  margin-bottom: auto;
+  vertical-align: middle;
+}
+.section {
+  margin: 0px;
+  padding: 20px 0px 20px 0px;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.sub {
+  display: flex;
+  margin: 0px;
+  padding: 0px 0px 0px 0px;
+}
+.fill50 {
+  width: 50%;
+}
+.c1 {
+  --accent-color: #2ef7e6;
+}
+.c2 {
+  --accent-color: #f53e8a;
+}
+p {
+  margin: 10px 0px 10px 0px;
+}
+a {
+  color: inherit;
+  transition: 0.5s;
+  text-decoration: none;
+}
+a:hover {
+  color: var(--accent-color);
+}
+b {
+  font-weight: bold;
+  width: 50%;
+}
+h1 {
+  font-size: 60px;
+  font-weight: 600;
+  letter-spacing: 10px;
+  text-transform: lowercase;
+  color: var(--accent-color);
+  margin: 0;
+}
+h2 {
+  font-size: 48px;
+  font-weight: 100;
+  letter-spacing: 5px;
+  text-transform: lowercase;
+  color: var(--accent-color);
+  margin: 0;
+}
+h3 {
+  font-size: 36px;
+  font-weight: 100;
+  letter-spacing: 5px;
+  text-transform: lowercase;
+  color: var(--accent-color);
+  margin: 0;
+}
+h4 {
+  font-size: 24px;
+  font-weight: 100;
+  letter-spacing: 2px;
+  text-transform: lowercase;
+  color: var(--accent-color);
+  margin: 0;
+}
+ul.fancylist {
+  list-style: none;
+  color: var(--accent-color);
+  padding-right: 2.5%;
+}
+ul.fancylist li {
+  padding-left: 1px;
+  transition: var(--hover-speed);
+  color: var(--text-color);
+}
+ul.fancylist li:before {
+  opacity: 0;
+  content: "\25B8";
+  padding-right: 8px;
+  transition: var(--hover-speed);
+}
+ul.fancylist li:hover {
+  padding-left: 25px;
+  color: var(--accent-color);
+}
+ul.fancylist li:hover:before {
+  opacity: 1;
+}
+.hidden {
+  opacity: 0;
+  transition: var(--hover-speed);
+}
+ul.fancylist li .hidden {
+  float: right;
+  margin-right: 10%;
+}
+ul.fancylist li:hover .hidden {
+  opacity: 1;
+}
+.right {
+  float: right;
+}
+a:hover {
+  color: var(--accent-color);
+}

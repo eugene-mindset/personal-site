@@ -1,8 +1,0 @@
-.section#title {
-  padding-top: 0px;
-  color: var(--accent-color-2);
-  background-color: var(--background-color-1);
-
-  min-height: 100vh;
-  text-align: center;
-}
