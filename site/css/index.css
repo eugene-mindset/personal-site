@@ -1,24 +1,17 @@
-@font-face {
-  font-family: 'IBM Plex Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local('IBM Plex Sans'), local('IBMPlexSans'), url(https://fonts.gstatic.com/s/ibmplexsans/v7/zYXgKVElMYYaJe8bpLHnCwDKhdHeEA.ttf) format('truetype');
-}
 .menu {
-  width: auto;
+  min-width: 10vw;
+  max-width: 15vw;
   height: 100%;
-  left: 50px;
+  left: 5vw;
   position: fixed;
   z-index: 1;
   display: none;
-  flex-grow: 4;
   color: #4a4e69;
   letter-spacing: 5px;
   background-color: #d5cad6;
 }
 .menu ul {
   width: 100%;
-  padding: 0px 10px 0px 10px;
   vertical-align: middle;
 }
 .menu a {
@@ -31,9 +24,13 @@
   list-style: none;
   margin-top: 10px;
   margin-bottom: 10px;
+  padding: 0px 10px 0px 10px;
   text-align: right;
 }
-@media only screen and (min-width: 1000px) {
+.menu li:before {
+  content: none;
+}
+@media only screen and (min-width: 1280px) {
   .menu {
     display: flex;
   }
@@ -65,9 +62,104 @@ body {
   margin: 0;
   display: flex;
   flex-flow: column;
-  font-weight: 100;
   font-size: 16px;
   letter-spacing: 1px;
+}
+p {
+  margin: 10px 0px 10px 0px;
+}
+a {
+  color: inherit;
+  transition: 0.5s;
+  text-decoration: none;
+}
+a:hover {
+  color: var(--accent-color);
+}
+b {
+  font-weight: 600;
+}
+h1 {
+  font-size: 60px;
+  font-weight: 700;
+  letter-spacing: 10px;
+  text-transform: lowercase;
+  color: var(--accent-color);
+  margin: 0;
+}
+h2 {
+  font-size: 48px;
+  font-weight: 500;
+  letter-spacing: 5px;
+  text-transform: lowercase;
+  color: var(--accent-color);
+  margin: 0;
+}
+h3 {
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: 5px;
+  text-transform: lowercase;
+  color: var(--accent-color);
+  margin: 0;
+}
+h4 {
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: lowercase;
+  color: var(--accent-color);
+  margin: 0;
+}
+h5 {
+  font-weight: 400;
+  font-size: 20px;
+  color: var(--accent-color);
+  margin: 0;
+}
+ul {
+  color: var(--accent-color);
+  padding: 0px 0px 0px 25px;
+  margin: 0px 0px 20px 0px;
+  list-style-position: outside;
+  list-style-type: none;
+}
+li {
+  margin-left: 20px;
+  text-indent: -27px;
+  color: var(--text-color);
+}
+ul li:before {
+  content: "\2010";
+  padding-right: 20px;
+  transition: 0.5s;
+  color: var(--text-color);
+}
+ul.fancylist li {
+  transition: 0.5s;
+  color: var(--text-color);
+}
+ul.fancylist li:hover {
+  color: var(--accent-color);
+}
+ul.fancylist li:hover:before {
+  color: var(--accent-color);
+}
+.hidden {
+  opacity: 0;
+  transition: 0.5s;
+}
+ul.fancylist li .hidden:before {
+  content: " (";
+}
+ul.fancylist li .hidden:after {
+  content: ")";
+}
+ul.fancylist li:hover .hidden {
+  opacity: 1;
+}
+a:hover {
+  color: var(--accent-color);
 }
 .center {
   margin-top: auto;
@@ -83,12 +175,11 @@ body {
   flex-direction: column;
 }
 .sub {
-  display: flex;
   margin: 0px;
   padding: 0px 0px 0px 0px;
 }
-.fill50 {
-  width: 50%;
+.controlfill {
+  width: 95%;
 }
 .c1 {
   --accent-color: #2ef7e6;
@@ -96,90 +187,25 @@ body {
 .c2 {
   --accent-color: #f53e8a;
 }
-p {
-  margin: 10px 0px 10px 0px;
-}
-a {
-  color: inherit;
-  transition: 0.5s;
-  text-decoration: none;
-}
-a:hover {
-  color: var(--accent-color);
-}
-b {
-  font-weight: bold;
-  width: 50%;
-}
-h1 {
-  font-size: 60px;
-  font-weight: 600;
-  letter-spacing: 10px;
-  text-transform: lowercase;
-  color: var(--accent-color);
-  margin: 0;
-}
-h2 {
-  font-size: 48px;
-  font-weight: 100;
-  letter-spacing: 5px;
-  text-transform: lowercase;
-  color: var(--accent-color);
-  margin: 0;
-}
-h3 {
-  font-size: 36px;
-  font-weight: 100;
-  letter-spacing: 5px;
-  text-transform: lowercase;
-  color: var(--accent-color);
-  margin: 0;
-}
-h4 {
-  font-size: 24px;
-  font-weight: 100;
-  letter-spacing: 2px;
-  text-transform: lowercase;
-  color: var(--accent-color);
-  margin: 0;
-}
-ul.fancylist {
-  list-style: none;
-  color: var(--accent-color);
-  padding-right: 2.5%;
-}
-ul.fancylist li {
-  padding-left: 1px;
-  transition: var(--hover-speed);
-  color: var(--text-color);
-}
-ul.fancylist li:before {
-  opacity: 0;
-  content: "\25B8";
-  padding-right: 8px;
-  transition: var(--hover-speed);
-}
-ul.fancylist li:hover {
-  padding-left: 25px;
-  color: var(--accent-color);
-}
-ul.fancylist li:hover:before {
-  opacity: 1;
-}
-.hidden {
-  opacity: 0;
-  transition: var(--hover-speed);
-}
-ul.fancylist li .hidden {
-  float: right;
-  margin-right: 10%;
-}
-ul.fancylist li:hover .hidden {
-  opacity: 1;
-}
-.right {
+.time {
+  font-weight: 300;
+  font-style: italic;
+  max-width: 40vw;
   float: right;
 }
-a:hover {
-  color: var(--accent-color);
+ul.column li {
+  margin-right: 20vw;
+}
+@media only screen and (min-width: 1280px) {
+  body {
+    font-size: 18px;
+  }
+  .controlfill {
+    width: 60vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
+  }
+  ul.column li {
+    margin-right: 15vw;
+  }
 }
