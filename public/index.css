@@ -118,15 +118,17 @@ p {
 /* Hyperlinks*/
 a {
   color: inherit;
+  font-weight: 600;
   text-decoration: none;
   transition: color 0.5s;
 }
 a:hover {
   color: var(--accent-color);
+  cursor: pointer;
 }
 a:active {
+  transition: text-shadow 0.25s;
   text-shadow: 0 0 10px var(--accent-color);
-  transition: 0.25s;
 }
 .pink {
   --accent-color: #f53e8a;
@@ -140,11 +142,12 @@ a:active {
   margin: 0px;
   padding: 5px 5px 5px 5px;
   width: 100%;*/
+  opacity: 0;
   display: none;
   flex-direction: column;
 }
 .main {
-  flex: 2 0 60vh;
+  flex: 2 0 auto;
   padding: 0.25rem;
   background-color: #f1fbfd;
   text-align: left;
@@ -152,10 +155,27 @@ a:active {
   font-size: 0.65rem;
 }
 .main a {
-  font-weight: 600;
+  position: relative;
+  transition: color 0.5s;
 }
-.main #content {
-  margin-top: 2.5vh;
+.main a:before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 0.065rem;
+  bottom: 0.05rem;
+  left: 50%;
+  color: inherit;
+  background-color: currentColor;
+  transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+.main a:hover:before {
+  left: 0%;
+  width: 100%;
+}
+#content {
+  padding: 0.25rem;
+  margin-top: 2vh;
   font-size: 0.5rem;
 }
 h1 {
@@ -198,19 +218,18 @@ h5 {
 }
 ul {
   padding: 0px 0px 0px 20px;
-  margin: 0px 0px 20px 0px;
+  margin: 0px 0px 0px 0px;
 }
 li {
   list-style-type: none;
   position: relative;
-  padding-bottom: 5px;
 }
 li:before {
   content: "\25A0";
   font-size: 0.5em;
   position: absolute;
   left: -1.5em;
-  top: 0.5vh;
+  top: 0.5em;
   color: var(--accent-color);
 }
 .hidden {
@@ -226,14 +245,17 @@ ul li:hover .hidden {
   transition: opacity 0.5s;
   opacity: 1;
 }
-.time {
+.date_loc {
   font-weight: 300;
   font-style: italic;
-  max-width: 40vw;
   float: right;
 }
 .highlight {
   color: var(--accent-color);
+}
+.v_sec {
+  transition: opacity 1s;
+  opacity: 1;
 }
 /*
 a:hover {
@@ -271,10 +293,10 @@ ul.column li {
 */
 .header {
   flex: 0 0 auto;
-  padding: 0.25rem 0.25rem 0.25rem 0.25rem;
-  background-color: #f53e8a;
+  padding: 0.1rem 0.25rem 0.1rem 0.25rem;
+  background-color: var(--accent-color);
   font-weight: 500;
-  font-size: 0.75rem;
+  font-size: 0.65rem;
 }
 .header .menu_btn {
   float: right;

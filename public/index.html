@@ -23,109 +23,96 @@
     </div>
     -->
 
-    <script>
-      $(document).ready(function(){
-        $("#home_link").click(function(){
-          $(".section").hide();
-          $("#home").show();
-        });
-        $("#edu_link").click(function(){
-          $(".section").hide();
-          $("#edu").show();
-        });
-        $("#exp_link").click(function(){
-          $(".section").hide();
-          $("#exp").show();
-        });
-      });
-    </script>
+    <script type="text/javascript" src="index.js"></script>
 
     <div class="header">
-      <a href="#main" id="home_link">eugene asare</a>
+      <a href="#main" id="home_link"></a>eugene asare</a>
     </div>
 
     <div class="main">
       <div class="pink">
-        <p><a href="#edu" id="edu_link">studying</a> at johns hopkins university.</p>
+        <p><a id="edu_link">studying</a> at johns hopkins university.</p>
         <p>looking for opportunities and <a href="#exp" id="exp_link">experiences</a>.</p>
         <p><a>skills</a> include being bad at video games.</p>
-        <p>a lot of <a>projects</a>.</p>
+        <p>several software and video games <a>projects</a>.</p>
         <p><a>contacts</a> below.</p>
       </div>
+    </div>
 
-      <div class="pink" id="content">
-        <div class="section" id="home"></div>
-        <div class="section" id ="edu">
-          <h3>Education</h3>
-          <b><a href="https://www.jhu.edu/" target="blank">
-            Johns Hopkins University
-          </a></b>
-          <span class="time">Aug 2017 —</span><br>
-          <b>Computer Science, B.S.</b><span class="time">Baltimore, Maryland</span><br><br>
-          <span class="highlight">Relevant Course Work</span>
-          <ul>
-            <li>Introductory Programming In Java <span class="hidden">EN.601.107</span></li>
-            <li>A Hands-On Introduction to MATLAB <span class="hidden">EN.553.282</span></li>
-            <li>Intermediate Programming <span class="hidden">EN.601.220</span></li>
-            <li>Data Structures <span class="hidden">EN.601.226</span></li>
-            <li>Automata &amp; Computation Theory <span class="hidden">EN.601.231</span></li>
-            <li>Computer System Fundamentals <span class="hidden">EN.601.229</span></li>
-            <li>Intro Algorithms <span class="hidden">EN.601.433</span></li>
-            <li>Computer Graphics <span class="hidden">EN.601.457</span></li>
-            <li>Artificial Intelligence <span class="hidden">EN.601.464</span></li>
-            <li>Machine Learning <span class="hidden">EN.601.475</span></li>
-            <li>Object Oriented Software Engineering <span class="hidden">EN.601.421</span></li>
-            <li>Computer Networks <span class="hidden">EN.601.414</span></li>
-            <li>Computer Vision <span class="hidden">EN.601.461</span></li>
-          </ul>
-        </div>
+    <div class="pink" id="content">
+      <div class="section" id="home"></div>
+      <div class="section" id ="edu">
+        <h3>Education</h3>
+        <a href="https://www.jhu.edu/" target="blank">Johns Hopkins University</a>
+        <span class="date_loc">Aug '17 — Present</span><br>
+        Computer Science, B.S.<span class="date_loc">Baltimore, MD</span><br>
+        <span class="highlight">Relevant Course Work</span>
+        <ul>
+          <li>Introductory Programming In Java <span class="hidden">EN.601.107</span></li>
+          <li>A Hands-On Introduction to MATLAB <span class="hidden">EN.553.282</span></li>
+          <li>Intermediate Programming <span class="hidden">EN.601.220</span></li>
+          <li>Data Structures <span class="hidden">EN.601.226</span></li>
+          <li>Automata &amp; Computation Theory <span class="hidden">EN.601.231</span></li>
+          <li>Computer System Fundamentals <span class="hidden">EN.601.229</span></li>
+          <li>Intro Algorithms <span class="hidden">EN.601.433</span></li>
+          <li>Computer Graphics <span class="hidden">EN.601.457</span></li>
+          <li>Artificial Intelligence <span class="hidden">EN.601.464</span></li>
+          <li>Machine Learning <span class="hidden">EN.601.475</span></li>
+          <li>Object Oriented Software Engineering <span class="hidden">EN.601.421</span></li>
+          <li>Computer Networks <span class="hidden">EN.601.414</span></li>
+          <li>Computer Vision <span class="hidden">EN.601.461</span></li>
+        </ul>
+        <br>
+        <a target="blank">Overbook High School</a>
+        <span class="date_loc">Sept '13 — June '17</span><br>
+        H.S. Diploma<span class="date_loc">Pine Hill, NJ</span><br><br>
+      </div>
 
-        <div class="section" id="exp">
-          <h3>Experience</h3>
+      <div class="section" id="exp">
+        <h3>Experience</h3>
+        <div>
           <div>
-            <div>
-              <b>Johns Hopkins University</b><span class="time">Jan 2020 — May 2020</span><br>
-              <b>Course Assistant</b><span class="time">Baltimore, Maryland</span>
-              <ul>
-                <li>Assisted with instructing 150 students on how to code in Python as well as using the Spyder IDE,
-                  matplotlib, and numpy.</li>
-                <li>Created materials and hosted review sessions to prep students for their upcomming assessments.</li>
-                <li>Proctored assessments and project help sessions during lectures.</li>
-                <li>Held weekly office hours to assist students on programming difficulties.</li>
-              </ul>
-            </div>
+            <b>Johns Hopkins University</b><span class="date_loc">Jan 2020 — May 2020</span><br>
+            <b>Course Assistant</b><span class="date_loc">Baltimore, Maryland</span>
+            <ul>
+              <li>Assisted with instructing 150 students on how to code in Python as well as using the Spyder IDE,
+                matplotlib, and numpy.</li>
+              <li>Created materials and hosted review sessions to prep students for their upcomming assessments.</li>
+              <li>Proctored assessments and project help sessions during lectures.</li>
+              <li>Held weekly office hours to assist students on programming difficulties.</li>
+            </ul>
+          </div>
 
-            <div>
-              <b>VectorWeb</b><span class="time">Jun 2019 — Aug 2019</span><br>
-              <b>Database Assistant</b><span class="time">Baltimore, Maryland</span>
-              <ul class>
-                <li>Labeled and imaged about two hundred mosquitoes, which would be used to train AI that would
-                  recognize the different species of the insect.
-                </li>
-                <li>Developed a python program to pull specimen information and image on mosquitoes in the BoldSystems'
-                  Specimen database.
-                </li>
-              </ul>
-            </div>
+          <div>
+            <b>VectorWeb</b><span class="date_loc">Jun 2019 — Aug 2019</span><br>
+            <b>Database Assistant</b><span class="date_loc">Baltimore, Maryland</span>
+            <ul class>
+              <li>Labeled and imaged about two hundred mosquitoes, which would be used to train AI that would
+                recognize the different species of the insect.
+              </li>
+              <li>Developed a python program to pull specimen information and image on mosquitoes in the BoldSystems'
+                Specimen database.
+              </li>
+            </ul>
+          </div>
 
-            <div>
-              <b>Thread</b><span class="time">Oct 2017 — May 2019</span><br>
-              <b>Intern</b><span class="time">Baltimore, Maryland</span>
-              <ul class>
-                <li>Managed the training processes for volunteers in the non-profit organization by logging their
-                  completion of sessions, preparing for upcoming trainings, emailing volunteers information,
-                  answering their questions, etc.
-                </li>
-                <li>Created a website to help volunteers, students, and staff members deal with situations they
-                  may face while being a part of the nonprofit using Google Sites and Google Docs.
-                </li>
-                <li>Made a tutorial on how to manage the layout and style of the website.</li>
-              </ul>
-            </div>
+          <div>
+            <b>Thread</b><span class="date_loc">Oct 2017 — May 2019</span><br>
+            <b>Intern</b><span class="date_loc">Baltimore, Maryland</span>
+            <ul class>
+              <li>Managed the training processes for volunteers in the non-profit organization by logging their
+                completion of sessions, preparing for upcoming trainings, emailing volunteers information,
+                answering their questions, etc.
+              </li>
+              <li>Created a website to help volunteers, students, and staff members deal with situations they
+                may face while being a part of the nonprofit using Google Sites and Google Docs.
+              </li>
+              <li>Made a tutorial on how to manage the layout and style of the website.</li>
+            </ul>
           </div>
         </div>
-
       </div>
+
     </div>
 
     <div class="footer cyan">
