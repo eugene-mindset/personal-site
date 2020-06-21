@@ -104,18 +104,20 @@
   font-size: 7.5vw;
 }
 body {
+  --text-color: #25253d;
+  --background-color: #f1fbfd;
   margin: 0;
-  display: flex;
-  flex-flow: column;
+  color: var(--text-color);
+  background-color: var(--background-color);
 }
-h1.small {
-  font-size: 1em;
-  letter-spacing: 2px;
+/*
+#content {
+  background-color: var(--background-color);
+  padding: 0 0.25rem 0 0.25rem;
+  font-size: 0.5rem;
 }
-p {
-  margin: 0px 0px 0px 0px;
-}
-/* Hyperlinks*/
+*/
+/*a tag and other hyperlinks*/
 a {
   color: inherit;
   font-weight: 600;
@@ -126,39 +128,16 @@ a:hover {
   color: var(--accent-color);
   cursor: pointer;
 }
-a:active {
+a:active,
+a:focus {
   transition: text-shadow 0.25s;
   text-shadow: 0 0 10px var(--accent-color);
 }
-.pink {
-  --accent-color: #f53e8a;
-}
-.cyan {
-  --accent-color: #2ef7e6;
-}
-.section {
-  /*
-  box-sizing: border-box;
-  margin: 0px;
-  padding: 5px 5px 5px 5px;
-  width: 100%;*/
-  opacity: 0;
-  display: none;
-  flex-direction: column;
-}
-.main {
-  flex: 2 0 auto;
-  padding: 0.25rem;
-  background-color: #f1fbfd;
-  text-align: left;
-  color: #4a4e69;
-  font-size: 0.65rem;
-}
-.main a {
+a.fancy {
   position: relative;
   transition: color 0.5s;
 }
-.main a:before {
+a.fancy:before {
   content: "";
   position: absolute;
   width: 0%;
@@ -167,17 +146,18 @@ a:active {
   left: 50%;
   color: inherit;
   background-color: currentColor;
-  transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+  transition: width 0.33333333s ease-in-out, left 0.33333333s ease-in-out;
 }
-.main a:hover:before {
+a.fancy:hover:before {
   left: 0%;
   width: 100%;
 }
-#content {
-  padding: 0.25rem;
-  margin-top: 2vh;
-  font-size: 0.5rem;
+a.fancy:active,
+a.fancy:focus {
+  transition: text-shadow 0.25s;
+  box-shadow: 0 0 10px var(--accent-color);
 }
+/* styling for h# tags */
 h1 {
   font-size: 2em;
   font-weight: 700;
@@ -216,6 +196,7 @@ h5 {
   color: var(--accent-color);
   margin: 0;
 }
+/* styling for ul and li tags and other things associated with lists. */
 ul {
   padding: 0px 0px 0px 20px;
   margin: 0px 0px 0px 0px;
@@ -232,9 +213,6 @@ li:before {
   top: 0.5em;
   color: var(--accent-color);
 }
-.hidden {
-  opacity: 0;
-}
 ul li .hidden:before {
   content: " (";
 }
@@ -245,6 +223,31 @@ ul li:hover .hidden {
   transition: opacity 0.5s;
   opacity: 1;
 }
+/* small styling changes for tags */
+p {
+  margin: 0px 0px 0px 0px;
+}
+/* styling for basic classes common throughout the site */
+.section {
+  /*
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 5px 5px 5px 5px;
+  width: 100%;*/
+  opacity: 0;
+  display: none;
+  flex-direction: column;
+}
+.main {
+  flex: 0 0 auto;
+  padding: 0.25rem;
+  text-align: left;
+  color: #4a4e69;
+  font-size: 0.65rem;
+}
+.hidden {
+  opacity: 0;
+}
 .date_loc {
   font-weight: 300;
   font-style: italic;
@@ -253,44 +256,6 @@ ul li:hover .hidden {
 .highlight {
   color: var(--accent-color);
 }
-.v_sec {
-  transition: opacity 1s;
-  opacity: 1;
-}
-/*
-a:hover {
-  transition: @hover-speed;
-  color: var(--accent-color);
-}
-
-
-.center {
-  margin-top: auto;
-  margin-bottom: auto;
-  vertical-align: middle;
-}
-
-
-
-.sub {
-  margin: 0px;
-  padding: 0px 0px 0px 0px;
-}
-
-
-
-
-
-ul.column li {
-  margin-right: 20vw;
-}
-
-@media only screen and (min-width: 784px) {
-  .section {
-    padding: 40px 40px 40px 250px;
-  }
-}
-*/
 .header {
   flex: 0 0 auto;
   padding: 0.1rem 0.25rem 0.1rem 0.25rem;
@@ -302,7 +267,7 @@ ul.column li {
   float: right;
 }
 .footer {
-  padding: 0.25rem 0.25rem 0.25rem 0.25rem;
+  padding: 0.25rem;
   font-size: 0.6rem;
   flex: 0 1 auto;
 }
@@ -311,58 +276,6 @@ ul.column li {
   padding: 0;
   margin: 0;
 }
-/*.menu {
-  width: 175px;
-  height: 100%;
-  left: 50px;
-  position: fixed;
-  z-index: 1;
-  display: none;
-
-  color: @extra-color-1;
-  letter-spacing: 3px;
-  font-size: 20px;
-  background-color: @extra-color-3;
-}
-
-.menu ul {
-  padding: 0;
-  margin-top: auto;
-  margin-bottom: auto;
-  width: 100%;
-  vertical-align: middle;
-}
-
-.menu a {
-  margin: 0px;
-  position: relative;
-  text-align: left;
-}
-
-.menu li {
-  margin: 0;
-  list-style: none;
-  padding: 3px 5px 3px 5px;
-  text-align: right;
-}
-
-.menu a:hover li{
-  transition: @hover-speed;
-  color: @background-color-1;
-  background-color: var(--accent-color);
-}
-
-.menu li:before {
-  content: none;
-}
-
-
-@media only screen and (min-width: 784px) {
-  .menu {
-    display: flex;
-  }
-}
-*/
 @media only screen and (min-width: 784px) {
   :root {
     font-size: 5vw;

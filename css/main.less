@@ -8,7 +8,7 @@
 @extra-color-2: #887EA3;
 @extra-color-3: #d5cad6;
 
-@hover-speed: 0.5s;
+@speed: 0.5s;
 
 :root {
   font-family: "IBM Plex Sans", sans-serif;
@@ -21,240 +21,25 @@
 }
 
 body  {
+  --text-color: @background-color-2;
+  --background-color: @background-color-1;
   margin: 0;
 
-  display: flex;
-  flex-flow: column;
-}
 
-
-
-h1.small {
-  font-size: 1em;
-  letter-spacing: 2px;
-}
-
-p {
-  margin: 0px 0px 0px 0px;
-}
-
-
-/* Hyperlinks*/
-a {
-  color: inherit;
-  font-weight: 600;
-  text-decoration: none;
-  transition: color 0.5s;
-}
-
-a:hover {
-  color: var(--accent-color);
-  cursor: pointer;
-}
-
-a:active {
-  transition: text-shadow 0.25s;
-  text-shadow: 0 0 10px var(--accent-color);
-}
-
-
-.pink {
-  --accent-color: @accent-color-2;
-}
-
-.cyan {
-  --accent-color: @accent-color-1;
-}
-
-.section {
-  /*
-  box-sizing: border-box;
-  margin: 0px;
-  padding: 5px 5px 5px 5px;
-  width: 100%;*/
-  opacity: 0;
-  display: none;
-  flex-direction: column;
-}
-
-.main {
-  flex: 2 0 auto;
-  padding: 0.25rem;
-  background-color: @background-color-1;
-
-  text-align: left;
-
-  color: @extra-color-1;
-
-  font-size: 0.65rem;
-
-  a {
-    position: relative;
-    transition: color 0.5s;
-  }
-
-  a:before {
-    content: "";
-    position: absolute;
-    width: 0%;
-    height: 0.065rem;
-    bottom: 0.05rem;
-    left: 50%;
-    color: inherit;
-    background-color: currentColor;
-    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
-  }
-
-  a:hover:before {
-    left: 0%;
-    width: 100%;
-  }
-}
-
-#content {
-  padding: 0.25rem;
-  margin-top: 2vh;
-  font-size: 0.5rem;
-}
-
-h1 {
-  font-size: 2em;
-  font-weight: 700;
-  letter-spacing: 5px;
-  text-transform: lowercase;
-
-  color: var(--accent-color);
-
-  margin: 0;
-}
-
-h2 {
-  font-size: 1.75em;
-  font-weight: 500;
-  letter-spacing: 3px;
-  text-transform: lowercase;
-
-  color: var(--accent-color);
-
-  margin: 0;
-}
-
-h3 {
-  font-size: 1.5em;
-  font-weight: 500;
-  letter-spacing: 3px;
-  text-transform: lowercase;
-
-  color: var(--accent-color);
-
-  margin: 0;
-}
-
-h4 {
-  font-size: 1.25em;
-  font-weight: 500;
-  letter-spacing: 2px;
-  text-transform: lowercase;
-
-  color: var(--accent-color);
-
-  margin: 0;
-}
-
-h5 {
-  font-weight: 400;
-  font-size: 1em;
-  color: var(--accent-color);
-  margin: 0;
-}
-
-ul {
-  padding: 0px 0px 0px 20px;
-  margin: 0px 0px 0px 0px;
-}
-
-li {
-  list-style-type: none;
-  position: relative;
-}
-
-li:before  {
-  content: "\25A0";
-  font-size: 0.5em;
-  position: absolute;
-  left: -1.5em;
-  top: 0.5em;
-
-  color: var(--accent-color);
-}
-
-.hidden {
-  opacity: 0;
-}
-
-ul li .hidden:before {
-  content: " (";
-}
-
-ul li .hidden:after {
-  content: ")";
-}
-
-ul li:hover .hidden {
-  transition: opacity @hover-speed;
-  opacity: 1;
-}
-
-.date_loc {
-  font-weight: 300;
-  font-style: italic;
-  float: right;
-}
-
-.highlight {
-  color: var(--accent-color);
-}
-
-.v_sec {
-  transition: opacity 1s;
-  opacity: 1;
+  color: var(--text-color);
+  background-color: var(--background-color);
 }
 
 /*
-a:hover {
-  transition: @hover-speed;
-  color: var(--accent-color);
-}
-
-
-.center {
-  margin-top: auto;
-  margin-bottom: auto;
-  vertical-align: middle;
-}
-
-
-
-.sub {
-  margin: 0px;
-  padding: 0px 0px 0px 0px;
-}
-
-
-
-
-
-ul.column li {
-  margin-right: 20vw;
-}
-
-@media only screen and (min-width: 784px) {
-  .section {
-    padding: 40px 40px 40px 250px;
-  }
+#content {
+  background-color: var(--background-color);
+  padding: 0 0.25rem 0 0.25rem;
+  font-size: 0.5rem;
 }
 */
 
-@import url('./menu.less');
-@import url('./sections.less');
-@import url('./desktop.less');
+
+
+@import url('./elements/_imports.less');
+@import url('./classes/_imports.less');
+@import url('./resolutions/_imports.less');

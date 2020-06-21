@@ -16,21 +16,20 @@ function transition(section) {
 
   $(selector + '_link').toggleClass('highlight');
 
-
   if (select[0].style.display === 'none') {
     call = () => {
-      select.animate({opacity: 1}, speed=1000);
+      select.animate({opacity: 1}, speed=500);
       isChanging = false;
     };
 
-    select.toggle(callback=call);
+    select.toggle(speed=500, callback=call);
   } else {
     call = () => {
-      select.toggle();
+      select.toggle(speed=500);
       isChanging = false;
     };
 
-    select.animate({opacity: 0}, speed=1000, callback=call);
+    select.animate({opacity: 0}, speed=500, callback=call);
   }
 }
 

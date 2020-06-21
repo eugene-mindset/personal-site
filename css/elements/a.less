@@ -1,0 +1,45 @@
+/*a tag and other hyperlinks*/
+
+a {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color @speed;
+}
+
+a:hover {
+  color: var(--accent-color);
+  cursor: pointer;
+}
+
+a:active, a:focus {
+  transition: text-shadow @speed / 2;
+  text-shadow: 0 0 10px var(--accent-color);
+}
+
+a.fancy {
+  position: relative;
+  transition: color @speed;
+}
+
+a.fancy:before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 0.065rem;
+  bottom: 0.05rem;
+  left: 50%;
+  color: inherit;
+  background-color: currentColor;
+  transition: width @speed/1.5 ease-in-out, left @speed/1.5 ease-in-out;
+}
+
+a.fancy:hover:before {
+  left: 0%;
+  width: 100%;
+}
+
+a.fancy:active, a.fancy:focus {
+  transition: text-shadow @speed / 2;
+  box-shadow: 0 0 10px var(--accent-color);
+}
