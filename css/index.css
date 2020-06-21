@@ -110,13 +110,6 @@ body {
   color: var(--text-color);
   background-color: var(--background-color);
 }
-/*
-#content {
-  background-color: var(--background-color);
-  padding: 0 0.25rem 0 0.25rem;
-  font-size: 0.5rem;
-}
-*/
 /*a tag and other hyperlinks*/
 a {
   color: inherit;
@@ -228,6 +221,11 @@ p {
   margin: 0px 0px 0px 0px;
 }
 /* styling for basic classes common throughout the site */
+#content {
+  background-color: var(--background-color);
+  padding: 0 0.25rem 0 0.25rem;
+  font-size: 0.5rem;
+}
 .section {
   /*
   box-sizing: border-box;
