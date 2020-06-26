@@ -33,3 +33,4 @@ I've recently recommited myself to working on this, and I've pretty much reset t
 liking my initial vision of it. As well, I was trying to build the mobile and desktop vesrions of
 the site up at the same time, so I restarted my progress with focusing on mobile design of the site
 first.
+p
