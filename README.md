@@ -9,9 +9,8 @@ Useful checkpoints for me to follow.
 - [ ] Finish the mobile version of site.
 - [ ] Preview this on your phone. Might require to use some basic method of
 hosting the site.
-- [ ] 
 
-## Technologies
+# Technologies
 
 I used the powerful CSS library Less v3.11.1 to give me more power in structuring my CSS and
 allowing a more 'programmatic' approach to creating the design. I compile the .less files to .css
