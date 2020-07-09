@@ -221,6 +221,9 @@ ul li:hover .hidden {
 p {
   margin: 0px 0px 0px 0px;
 }
+b {
+  font-weight: 600;
+}
 /* styling for basic classes common throughout the site */
 #content {
   background-color: var(--background-color);
