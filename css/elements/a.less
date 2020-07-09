@@ -4,12 +4,14 @@ a {
   color: inherit;
   font-weight: 600;
   text-decoration: none;
-  transition: color @speed;
+  transition: color 0;
+  
 }
 
 a:hover {
   color: var(--accent-color);
   cursor: pointer;
+  transition: color @speed;
 }
 
 a:active, a:focus {
@@ -19,7 +21,6 @@ a:active, a:focus {
 
 a.fancy {
   position: relative;
-  transition: color @speed;
 }
 
 a.fancy:before {

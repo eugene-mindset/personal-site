@@ -116,11 +116,12 @@ a {
   color: inherit;
   font-weight: 600;
   text-decoration: none;
-  transition: color 0.5s;
+  transition: color 0;
 }
 a:hover {
   color: var(--accent-color);
   cursor: pointer;
+  transition: color 0.5s;
 }
 a:active,
 a:focus {
@@ -129,7 +130,6 @@ a:focus {
 }
 a.fancy {
   position: relative;
-  transition: color 0.5s;
 }
 a.fancy:before {
   content: "";
@@ -241,7 +241,7 @@ p {
   flex: 0 0 auto;
   padding: 0.25rem;
   text-align: left;
-  color: #4a4e69;
+  color: var(--text-color);
   font-size: 0.65rem;
 }
 .hidden {
