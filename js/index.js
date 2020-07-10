@@ -3,24 +3,29 @@ var isChanging = false; // dont want to process other changes if one is already 
 var currentSection = 'home';
 var sections = {
   'home': {
-    backgroundColor: '#000000',
-    textColor: '#FFFFFF'
+    backgroundColor: '#F1FBFD',
+    textColor: '#25253D',
+    accentColor: '#F53E8A'
   },
   'edu': {
-    backgroundColor: '#00000F',
-    textColor: '#FFFFF0'
+    backgroundColor: '#4A4E69',
+    textColor: '#F1FBFD',
+    accentColor: '#2EF7E6'
   },
   'exp': {
-    backgroundColor: '#0000F0',
-    textColor: '#FFFF0F'
+    backgroundColor: '#D5CAD6',
+    textColor: '#25253D',
+    accentColor: '#EF798A'
   },
   'skll': {
-    backgroundColor: '#000F00',
-    textColor: '#FFF0FF'
+    backgroundColor: '#25253D',
+    textColor: '#F1FBFD',
+    accentColor: '#7D72D5'
   },
   'proj': {
-    backgroundColor: '#00F000',
-    textColor: '#FF0FFF'
+    backgroundColor: '#887EA3',
+    textColor: '#F1FBFD',
+    accentColor: '#25253D'
   },
 }
 
@@ -30,7 +35,6 @@ var sections = {
 
 
 function transition(section) {
-
   // ...
   if (currentSection != 'home' && section != 'home') {
     if (currentSection == section) {
@@ -46,7 +50,7 @@ function transition(section) {
   }
 }
 
-  /*
+/*
   console.log(isChanging, "section");
   if (isChanging) {
     return;
@@ -76,12 +80,44 @@ function transition(section) {
     $('body').css('--background-color', '#f1fbfd');
     select.animate({opacity: 0}, speed=500, callback=call);
   }
-  */
+*/
+
+
+async function animateColorTransition(property, color, speed) {
+  return new Promise((resolve) => {
+    let startColor = $('body').css(property).trim();
+
+    // start color values for RGB channels
+    let startR = parseInt("0x" + startColor.slice(1,3));
+    let startG = parseInt("0x" + startColor.slice(3,5));
+    let startB = parseInt("0x" + startColor.slice(5,7));
+
+    // end color values for RGB channels
+    let endR = parseInt("0x" + color.slice(1,3));
+    let endG = parseInt("0x" + color.slice(3,5));
+    let endB = parseInt("0x" + color.slice(5,7));
+
+    $({count:0}).animate({count:speed}, {
+      duration: speed,
+      step: function() {
+        let currR = Math.round(startR + ((this.count/speed) * (endR - startR)));
+        let currG = Math.round(startG + ((this.count/speed) * (endG - startG)));
+        let currB = Math.round(startB + ((this.count/speed) * (endB - startB)));
+
+        // console.log(currR, currG, currB);
+        currR = ('00' + currR.toString(16).toUpperCase()).slice(-2);
+        currG = ('00' + currG.toString(16).toUpperCase()).slice(-2);
+        currB = ('00' + currB.toString(16).toUpperCase()).slice(-2);
+
+        $('body').css(property, '#' + currR + currG + currB);
+      }
+    }).promise().then(resolve);
+  });
+}
+
 
 
 async function transitionSections(startSection, endSection) {
-  
-
   // ignore other transitions while one is occuring
   if (isChanging) {
     return;
@@ -93,20 +129,33 @@ async function transitionSections(startSection, endSection) {
   let endSelector = '#' + endSection;
 
   // need to make a custom function to handle color animations
-  if (endSection == "home") {
-    $('body').css('--background-color', '#F1FBFD');
-    $('body').css('--text-color', '#25253D');
-  } else {
-    $('body').css('--background-color', '#25253D');
-    $('body').css('--text-color', '#F1FBFD');
-  }
+  let colorSpeed = 750;
+  animateColorTransition(
+    '--background-color',
+    sections[endSection]['backgroundColor'],
+    colorSpeed
+  );
+
+  animateColorTransition(
+    '--text-color',
+    sections[endSection]['textColor'],
+    colorSpeed
+  );
+
+  animateColorTransition(
+    '--accent-color',
+    sections[endSection]['accentColor'],
+    colorSpeed
+  );
 
   // we wait on things to visible disappear
   // no waiting on first toggle to not have the page resize twice
   await $(startSelector).animate({opacity: 0}, speed=500).promise();
-  $(startSelector).toggle(speed=500).promise();
-  await $(endSelector).toggle(speed=500).promise();
-  await $(endSelector).animate({opacity: 1}, speed=500).promise();
+
+  $(startSelector).toggle(speed=500);
+  await $(endSelector).toggle(speed=500).promise().then(
+    () => $(endSelector).animate({opacity: 1}, speed=500)
+  );
 
 
   currentSection = endSection;
