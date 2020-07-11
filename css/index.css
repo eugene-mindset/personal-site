@@ -189,6 +189,7 @@ h5 {
 ul {
   padding: 0px 0px 0px 20px;
   margin: 0px 0px 0px 0px;
+  list-style-type: none;
 }
 li {
   list-style-type: none;
