@@ -223,9 +223,13 @@ b {
 #content {
   background-color: var(--background-color);
   padding: 0 0.25rem 0 0.25rem;
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
   font-size: 0.5rem;
+}
+@supports (padding: min(0px)) {
+  #content .post {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
 }
 .section {
   /*
@@ -240,11 +244,15 @@ b {
 .main {
   flex: 0 0 auto;
   padding: 0.25rem;
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
   text-align: left;
   color: var(--text-color);
   font-size: 0.65rem;
+}
+@supports (padding: min(0px)) {
+  .main .post {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
 }
 .hidden {
   opacity: 0;
@@ -260,11 +268,15 @@ b {
 .header {
   flex: 0 0 auto;
   padding: 0.1rem 0.25rem 0.1rem 0.25rem;
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
   background-color: var(--accent-color);
   font-weight: 500;
   font-size: 0.65rem;
+}
+@supports (padding: min(0px)) {
+  .header .post {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
 }
 .header a {
   --accent-color: var(--background-color);
@@ -274,10 +286,14 @@ b {
 }
 .footer {
   padding: 0.25rem;
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
   font-size: 0.6rem;
   flex: 0 1 auto;
+}
+@supports (padding: min(0px)) {
+  .footer .post {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
 }
 .footer ul {
   list-style: none;

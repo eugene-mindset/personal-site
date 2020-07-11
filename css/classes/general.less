@@ -4,8 +4,13 @@
   background-color: var(--background-color);
 
   padding: 0 0.25rem 0 0.25rem;
-  padding-left: min(0.25rem, env(safe-area-inset-left));
-  padding-right: min(0.25rem, env(safe-area-inset-right));
+  @supports(padding: min(0px)) {
+    .post {
+      padding-left: min(0.25rem, env(safe-area-inset-left));
+      padding-right: min(0.25rem, env(safe-area-inset-right));
+    }
+  }
+
 
   font-size: 0.5rem;
 }
@@ -25,8 +30,13 @@
   flex: 0 0 auto;
 
   padding: 0.25rem;
-  padding-left: min(0.25rem, env(safe-area-inset-left));
-  padding-right: min(0.25rem, env(safe-area-inset-right));
+  @supports(padding: min(0px)) {
+    .post {
+      padding-left: min(0.25rem, env(safe-area-inset-left));
+      padding-right: min(0.25rem, env(safe-area-inset-right));
+    }
+  }
+
 
   text-align: left;
 
@@ -53,8 +63,12 @@
   flex: 0 0 auto;
 
   padding: 0.1rem 0.25rem 0.1rem 0.25rem;
-  padding-left: min(0.25rem, env(safe-area-inset-left));
-  padding-right: min(0.25rem, env(safe-area-inset-right));
+  @supports(padding: min(0px)) {
+    .post {
+      padding-left: min(0.25rem, env(safe-area-inset-left));
+      padding-right: min(0.25rem, env(safe-area-inset-right));
+    }
+  }
 
   background-color: var(--accent-color);
 
@@ -72,8 +86,13 @@
 
 .footer {
   padding: 0.25rem;
-  padding-left: min(0.25rem, env(safe-area-inset-left));
-  padding-right: min(0.25rem, env(safe-area-inset-right));
+
+  @supports(padding: min(0px)) {
+    .post {
+      padding-left: min(0.25rem, env(safe-area-inset-left));
+      padding-right: min(0.25rem, env(safe-area-inset-right));
+    }
+  }
 
   font-size: 0.6rem;
   flex: 0 1 auto;
