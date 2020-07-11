@@ -191,7 +191,6 @@ ul {
   list-style-type: none;
 }
 li {
-  list-style-type: none;
   position: relative;
 }
 li:before {
@@ -201,6 +200,9 @@ li:before {
   left: -1.5em;
   top: 0.5em;
   color: var(--accent-color);
+}
+ul.no_bullets li:before {
+  content: "";
 }
 ul li .hidden:before {
   content: " (";

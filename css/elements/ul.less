@@ -7,11 +7,10 @@ ul {
 }
 
 li {
-  list-style-type: none;
   position: relative;
 }
 
-li:before  {
+li:before {
   content: "\25A0";
   font-size: 0.5em;
   position: absolute;
@@ -19,6 +18,10 @@ li:before  {
   top: 0.5em;
 
   color: var(--accent-color);
+}
+
+ul.no_bullets li:before {
+  content: "";
 }
 
 ul li .hidden:before {
