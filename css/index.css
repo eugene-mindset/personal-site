@@ -225,10 +225,10 @@ b {
   padding: 0 0.25rem 0 0.25rem;
   font-size: 0.5rem;
 }
-@supports (padding: min(0px)) {
+@supports (padding: max(0px)) {
   #content {
-    padding-left: 0.25rem;
-    padding-right: 0.25rem;
+    padding-left: max(0.25rem, env(safe-area-inset-left));
+    padding-right: max(0.25rem, env(safe-area-inset-right));
   }
 }
 .section {
@@ -248,10 +248,10 @@ b {
   color: var(--text-color);
   font-size: 0.65rem;
 }
-@supports (padding: min(0px)) {
+@supports (padding: max(0px)) {
   .main {
-    padding-left: 0.25rem;
-    padding-right: 0.25rem;
+    padding-left: max(0.25rem, env(safe-area-inset-left));
+    padding-right: max(0.25rem, env(safe-area-inset-right));
   }
 }
 .hidden {
@@ -274,8 +274,8 @@ b {
 }
 @supports (padding: max(0px)) {
   .header {
-    padding-left: 0.25rem;
-    padding-right: 0.25rem;
+    padding-left: max(0.25rem, env(safe-area-inset-left));
+    padding-right: max(0.25rem, env(safe-area-inset-right));
   }
 }
 .header a {
@@ -291,8 +291,8 @@ b {
 }
 @supports (padding: max(0px)) {
   .footer {
-    padding-left: 0.25rem;
-    padding-right: 0.25rem;
+    padding-left: max(0.25rem, env(safe-area-inset-left));
+    padding-right: max(0.25rem, env(safe-area-inset-right));
   }
 }
 .footer ul {

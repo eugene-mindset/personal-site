@@ -1,12 +1,14 @@
 /* styling for basic classes common throughout the site */
+@multi-padding-left: ~"max(0.25rem, env(safe-area-inset-left))";
+@multi-padding-right: ~"max(0.25rem, env(safe-area-inset-right))";
 
 #content {
   background-color: var(--background-color);
 
   padding: 0 0.25rem 0 0.25rem;
-  @supports(padding: min(0px)) {
-    padding-left: max(0.25rem, env(safe-area-inset-left));
-    padding-right: max(0.25rem, env(safe-area-inset-right));
+  @supports(padding: max(0px)) {
+    padding-left: @multi-padding-left;
+    padding-right: @multi-padding-right;
   }
 
 
@@ -28,9 +30,9 @@
   flex: 0 0 auto;
 
   padding: 0.25rem;
-  @supports(padding: min(0px)) {
-    padding-left: max(0.25rem, env(safe-area-inset-left));
-    padding-right: max(0.25rem, env(safe-area-inset-right));
+  @supports(padding: max(0px)) {
+    padding-left: @multi-padding-left;
+    padding-right: @multi-padding-right;
   }
 
 
@@ -60,8 +62,8 @@
 
   padding: 0.1rem 0.25rem 0.1rem 0.25rem;
   @supports(padding: max(0px)) {
-    padding-left: max(0.25rem, env(safe-area-inset-left));
-    padding-right: max(0.25rem, env(safe-area-inset-right));
+    padding-left: @multi-padding-left;
+    padding-right: @multi-padding-right;
   }
 
   background-color: var(--accent-color);
@@ -82,8 +84,8 @@
   padding: 0.25rem;
 
   @supports(padding: max(0px)) {
-    padding-left: max(0.25rem, env(safe-area-inset-left));
-    padding-right: max(0.25rem, env(safe-area-inset-right));
+    padding-left: @multi-padding-left;
+    padding-right: @multi-padding-right;
   }
 
   font-size: 0.6rem;
