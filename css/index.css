@@ -226,7 +226,7 @@ b {
   font-size: 0.5rem;
 }
 @supports (padding: min(0px)) {
-  #content .post {
+  #content {
     padding-left: 0.25rem;
     padding-right: 0.25rem;
   }
@@ -249,7 +249,7 @@ b {
   font-size: 0.65rem;
 }
 @supports (padding: min(0px)) {
-  .main .post {
+  .main {
     padding-left: 0.25rem;
     padding-right: 0.25rem;
   }
@@ -272,8 +272,8 @@ b {
   font-weight: 500;
   font-size: 0.65rem;
 }
-@supports (padding: min(0px)) {
-  .header .post {
+@supports (padding: max(0px)) {
+  .header {
     padding-left: 0.25rem;
     padding-right: 0.25rem;
   }
@@ -289,8 +289,8 @@ b {
   font-size: 0.6rem;
   flex: 0 1 auto;
 }
-@supports (padding: min(0px)) {
-  .footer .post {
+@supports (padding: max(0px)) {
+  .footer {
     padding-left: 0.25rem;
     padding-right: 0.25rem;
   }
