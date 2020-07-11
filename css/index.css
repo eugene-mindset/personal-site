@@ -113,15 +113,10 @@ body {
 }
 /*a tag and other hyperlinks*/
 a {
-  color: inherit;
-  font-weight: 600;
+  font-weight: 500;
   text-decoration: none;
   transition: color 0;
-}
-a:hover {
   color: var(--accent-color);
-  cursor: pointer;
-  transition: color 0.5s;
 }
 a:active,
 a:focus {
@@ -262,9 +257,11 @@ b {
   flex: 0 0 auto;
   padding: 0.1rem 0.25rem 0.1rem 0.25rem;
   background-color: var(--accent-color);
-  color: var(--background-color);
   font-weight: 500;
   font-size: 0.65rem;
+}
+.header a {
+  --accent-color: var(--background-color);
 }
 .header .menu_btn {
   float: right;
