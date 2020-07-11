@@ -1,6 +1,6 @@
 # personal-site
 
-Making a website to act as an online resume/portfolio. Located at [here](https://eugene-mindset.github.io/personal-site/index.html) for now
+Making a website to act as an online resume/portfolio. Located at [here](https://eugene-mindset.github.io/personal-site/index.html) for now.
 
 ## Goals
 
