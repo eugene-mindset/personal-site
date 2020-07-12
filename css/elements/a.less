@@ -34,5 +34,10 @@ a.fancy:hover:before {
 
 a.fancy:active, a.fancy:focus {
   transition: text-shadow @speed / 2;
+  text-shadow: 0 0 10px var(--accent-color);
+}
+
+a.fancy:active:before a.fancy:focus:before {
+  transition: text-shadow @speed / 2;
   box-shadow: 0 0 10px var(--accent-color);
 }

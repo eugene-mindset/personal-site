@@ -4,14 +4,19 @@
 @accent-color-2: #F53E8A;
 @background-color-1: #F1FBFD;
 @background-color-2: #25253D;
-@extra-color-1: #4A4E69;
-@extra-color-2: #887EA3;
-@extra-color-3: #D5CAD6;
-@extra-color-4: #7D72D5;
-@extra-color-5: #256EFF;
-@extra-color-6: #EF798A;
+@extra-color-1: #3B3249;
+@extra-color-2: #675D83;
+@extra-color-3: #8C7891;
+@extra-color-4: #008DA3;
+@extra-color-5: #694F5D;
+@extra-color-6: #FFD9DA;
 
 @speed: 0.5s;
+
+html, body {
+  margin: 0;
+  height: 100%
+}
 
 :root {
   font-family: "IBM Plex Sans", sans-serif;
@@ -27,7 +32,10 @@ body  {
   --text-color: @background-color-2;
   --background-color: @background-color-1;
   --accent-color: @accent-color-2;
-  margin: 0;
+
+  min-height: max-content;
+  display: flex;
+  flex-direction: column;
 
 
   color: var(--text-color);
