@@ -2,61 +2,6 @@
 @multi-padding-left: ~"max(0.25rem, env(safe-area-inset-left))";
 @multi-padding-right: ~"max(0.25rem, env(safe-area-inset-right))";
 
-#content {
-  background-color: var(--background-color);
-  flex: 1 0 auto;
-
-  padding: 0 0.25rem 0.4rem 0.25rem;
-  @supports(padding: max(0px)) {
-    padding-left: @multi-padding-left;
-    padding-right: @multi-padding-right;
-  }
-
-  font-size: 0.5rem;
-}
-
-.section {
-  /*
-  box-sizing: border-box;
-  margin: 0px;
-  padding: 5px 5px 5px 5px;
-  width: 100%;*/
-  opacity: 0;
-  display: none;
-  flex-direction: column;
-}
-
-.main {
-  flex: 0 0 auto;
-
-  padding: 0.25rem;
-  @supports(padding: max(0px)) {
-    padding-left: @multi-padding-left;
-    padding-right: @multi-padding-right;
-  }
-
-
-  text-align: left;
-
-  color: var(--text-color);
-
-  font-size: 0.65rem;
-}
-
-.hidden {
-  opacity: 0;
-}
-
-.date_loc {
-  font-weight: 300;
-  font-style: italic;
-  float: right;
-}
-
-.highlight {
-  color: var(--accent-color);
-}
-
 .header {
   flex: 0 0 auto;
 
@@ -73,11 +18,28 @@
   }
 
   font-weight: 500;
-  font-size: 0.65rem;
+  font-size: 1rem;
+  letter-spacing: 2px;
 
   .menu_btn {
     float: right;
   }
+}
+
+.menu {
+  flex: 0 0 auto;
+
+  padding: 0.25rem;
+  @supports(padding: max(0px)) {
+    padding-left: @multi-padding-left;
+    padding-right: @multi-padding-right;
+  }
+
+  text-align: left;
+
+  color: var(--text-color);
+
+  font-size: 0.75rem;
 }
 
 .footer {
@@ -98,4 +60,53 @@
     padding: 0;
     margin: 0;
   }
+}
+
+#content {
+  background-color: var(--background-color);
+  flex: 1 0 auto;
+
+  padding: 0.25rem 0.25rem 0.4rem 0.25rem;
+  @supports(padding: max(0px)) {
+    padding-left: @multi-padding-left;
+    padding-right: @multi-padding-right;
+  }
+
+  h3 {
+    color: var(--background-color);
+    background-color: var(--accent-color);
+    margin-left: calc(-1 * @multi-padding-left);
+    margin-right: calc(-1 * @multi-padding-right);
+    margin-bottom: 0.25rem;
+    padding-left: @multi-padding-left;
+    padding-right: @multi-padding-right;
+    padding-bottom: 0.15rem;
+  }
+
+  font-size: 0.575rem;
+}
+
+.section {
+  /*
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 5px 5px 5px 5px;
+  width: 100%;*/
+  opacity: 0;
+  display: none;
+  flex-direction: column;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.date_loc {
+  font-weight: 300;
+  font-style: italic;
+  float: right;
+}
+
+.highlight {
+  color: var(--accent-color);
 }

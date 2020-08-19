@@ -106,7 +106,7 @@ body {
   background-color: #25253D;
   color: #F1FBFD;
   scroll-behavior: smooth;
-  font-size: 7.5vw;
+  font-size: 5.25vmin;
 }
 body {
   --text-color: #25253D;
@@ -128,6 +128,9 @@ a:active,
 a:focus {
   transition: text-shadow 0.25s;
   text-shadow: 0 0 10px var(--accent-color);
+}
+a:hover {
+  cursor: pointer;
 }
 a.fancy {
   position: relative;
@@ -176,7 +179,7 @@ h2 {
 h3 {
   font-size: 1.5em;
   font-weight: 500;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   text-transform: lowercase;
   color: var(--accent-color);
   margin: 0;
@@ -184,7 +187,7 @@ h3 {
 h4 {
   font-size: 1.25em;
   font-weight: 500;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   text-transform: lowercase;
   color: var(--accent-color);
   margin: 0;
@@ -233,58 +236,13 @@ b {
   font-weight: 700;
 }
 /* styling for basic classes common throughout the site */
-#content {
-  background-color: var(--background-color);
-  flex: 1 0 auto;
-  padding: 0 0.25rem 0.4rem 0.25rem;
-  font-size: 0.5rem;
-}
-@supports (padding: max(0px)) {
-  #content {
-    padding-left: max(0.25rem, env(safe-area-inset-left));
-    padding-right: max(0.25rem, env(safe-area-inset-right));
-  }
-}
-.section {
-  /*
-  box-sizing: border-box;
-  margin: 0px;
-  padding: 5px 5px 5px 5px;
-  width: 100%;*/
-  opacity: 0;
-  display: none;
-  flex-direction: column;
-}
-.main {
-  flex: 0 0 auto;
-  padding: 0.25rem;
-  text-align: left;
-  color: var(--text-color);
-  font-size: 0.65rem;
-}
-@supports (padding: max(0px)) {
-  .main {
-    padding-left: max(0.25rem, env(safe-area-inset-left));
-    padding-right: max(0.25rem, env(safe-area-inset-right));
-  }
-}
-.hidden {
-  opacity: 0;
-}
-.date_loc {
-  font-weight: 300;
-  font-style: italic;
-  float: right;
-}
-.highlight {
-  color: var(--accent-color);
-}
 .header {
   flex: 0 0 auto;
   padding: 0.1rem 0.25rem 0.1rem 0.25rem;
   background-color: var(--accent-color);
   font-weight: 500;
-  font-size: 0.65rem;
+  font-size: 1rem;
+  letter-spacing: 2px;
 }
 @supports (padding: max(0px)) {
   .header {
@@ -297,6 +255,19 @@ b {
 }
 .header .menu_btn {
   float: right;
+}
+.menu {
+  flex: 0 0 auto;
+  padding: 0.25rem;
+  text-align: left;
+  color: var(--text-color);
+  font-size: 0.75rem;
+}
+@supports (padding: max(0px)) {
+  .menu {
+    padding-left: max(0.25rem, env(safe-area-inset-left));
+    padding-right: max(0.25rem, env(safe-area-inset-right));
+  }
 }
 .footer {
   padding: 0.25rem;
@@ -315,34 +286,102 @@ b {
   padding: 0;
   margin: 0;
 }
+#content {
+  background-color: var(--background-color);
+  flex: 1 0 auto;
+  padding: 0.25rem 0.25rem 0.4rem 0.25rem;
+  font-size: 0.575rem;
+}
+@supports (padding: max(0px)) {
+  #content {
+    padding-left: max(0.25rem, env(safe-area-inset-left));
+    padding-right: max(0.25rem, env(safe-area-inset-right));
+  }
+}
+#content h3 {
+  color: var(--background-color);
+  background-color: var(--accent-color);
+  margin-left: calc(-1 * max(0.25rem, env(safe-area-inset-left)));
+  margin-right: calc(-1 * max(0.25rem, env(safe-area-inset-right)));
+  margin-bottom: 0.25rem;
+  padding-left: max(0.25rem, env(safe-area-inset-left));
+  padding-right: max(0.25rem, env(safe-area-inset-right));
+  padding-bottom: 0.15rem;
+}
+.section {
+  /*
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 5px 5px 5px 5px;
+  width: 100%;*/
+  opacity: 0;
+  display: none;
+  flex-direction: column;
+}
+.hidden {
+  opacity: 0;
+}
+.date_loc {
+  font-weight: 300;
+  font-style: italic;
+  float: right;
+}
+.highlight {
+  color: var(--accent-color);
+}
 @media only screen and (min-width: 784px) {
   :root {
-    font-size: 5vw;
+    font-size: 4vmin;
+  }
+  .section ul {
+    max-width: 75%;
   }
 }
 @media only screen and (min-width: 992px) {
   :root {
-    font-size: 2.5vw;
+    font-size: 3vmin;
   }
   body {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
+    width: 85%;
+  }
+  .contain,
+  #content {
+    padding-left: 1vw;
+    padding-right: 1vw;
+  }
+  .contain h3,
+  #content h3 {
+    margin-left: -1vw;
+    margin-right: -1vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
   }
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1280px) {
   :root {
-    font-size: 2vw;
+    font-size: 40px;
   }
   body {
-    width: 65%;
+    width: 75%;
   }
 }
 @media only screen and (min-width: 1600px) {
   :root {
-    font-size: 1.5vw;
+    font-size: 32px;
   }
   body {
-    width: 50%;
+    width: 60%;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  :root {
+    font-size: 28px;
+  }
+  body {
+    width: 57.5%;
   }
 }

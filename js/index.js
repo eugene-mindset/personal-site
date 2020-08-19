@@ -159,6 +159,7 @@ async function transitionSections(startSection, endSection) {
 
 
   currentSection = endSection;
+  location.hash = endSection;
   isChanging = false;
 }
 
@@ -181,6 +182,10 @@ $(document).ready(function() {
   Object.keys(sections).map(function(key) {
     $(document).on('click', `#${key}_link`, () => transition(key));
   });
+
+  if (location.hash != "") {
+    transition(location.hash.substring(1));
+  }
 
 });
 
