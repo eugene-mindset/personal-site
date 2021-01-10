@@ -5,41 +5,54 @@
 .header {
   flex: 0 0 auto;
 
-  padding: 0.1rem 0.25rem 0.1rem 0.25rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+
+  /*
   @supports(padding: max(0px)) {
     padding-left: @multi-padding-left;
     padding-right: @multi-padding-right;
   }
+  */
 
   background-color: var(--accent-color);
+  color: var(--background-color);
 
-  a {
-    --accent-color: var(--background-color);
-  }
+  font-weight: 900;
+  font-size: 1.5rem;
+  letter-spacing: 0.25rem;
+  overflow: hidden;
+  white-space: nowrap;
 
-  font-weight: 500;
-  font-size: 1rem;
-  letter-spacing: 2px;
+  outline: 8px solid var(--accent-color);
+  outline-offset: 10px;
 
-  .menu_btn {
-    float: right;
-  }
+  min-width: 250px;
 }
 
 .menu {
+  position: fixed;
+  padding-top: var(--pad-offset);
   flex: 0 0 auto;
+  z-index: 3;
 
   padding: 0.25rem;
   @supports(padding: max(0px)) {
+    padding-top: var(--pad-offset);
     padding-left: @multi-padding-left;
     padding-right: @multi-padding-right;
   }
 
-  text-align: left;
-
   color: var(--text-color);
+  background: var(--background-color);
 
-  font-size: 0.75rem;
+  font-size: 1rem;
+  text-align: center;
+
+  .options {
+    margin-top: calc(20px + 2vh);
+  }
+  
+  max-height: 35vh;
 }
 
 .footer {
@@ -63,27 +76,35 @@
 }
 
 #content {
-  background-color: var(--background-color);
-  flex: 1 0 auto;
+  --content-offset: 27.5vh;
+  flex: 0 0 auto;
+  margin-top: var(--content-offset);
+
+  --content-width: 90vw;
 
   padding: 0.25rem 0.25rem 0.4rem 0.25rem;
-  @supports(padding: max(0px)) {
-    padding-left: @multi-padding-left;
-    padding-right: @multi-padding-right;
-  }
 
   h3 {
+    position: fixed;
+    margin: ~"min(var(--pad-offset), -10px)";
+    z-index: -1;
     color: var(--background-color);
     background-color: var(--accent-color);
-    margin-left: calc(-1 * @multi-padding-left);
-    margin-right: calc(-1 * @multi-padding-right);
-    margin-bottom: 0.25rem;
+    margin-left: calc((var(--content-width) - 100vw)/2);
     padding-left: @multi-padding-left;
     padding-right: @multi-padding-right;
-    padding-bottom: 0.15rem;
+    font-size: 17.5vw;
+    width: 100%;
+    opacity: 0.25;
+    text-align: center;
   }
 
-  font-size: 0.575rem;
+  ul {
+    --ul-pad: 200px;
+    padding: 0px var(--ul-pad) 0px 20px;
+  }
+
+  width: var(--content-width);
 }
 
 .section {

@@ -3,27 +3,27 @@ var isChanging = false; // dont want to process other changes if one is already 
 var currentSection = 'home';
 var sections = {
   'home': {
-    backgroundColor: '#F1FBFD',
-    textColor: '#25253D',
+    backgroundColor: '#25253D',
+    textColor: '#F1FBFD',
     accentColor: '#F53E8A'
   },
   'edu': {
-    backgroundColor: '#4F4964',
+    backgroundColor: '#25253D',
     textColor: '#F1FBFD',
     accentColor: '#2EF7E6'
   },
   'exp': {
-    backgroundColor: '#C7D1DD',
-    textColor: '#25253D',
+    backgroundColor: '#25253D',
+    textColor: '#F1FBFD',
     accentColor: '#008DA3'
   },
   'skll': {
-    backgroundColor: '#686181',
+    backgroundColor: '#25253D',
     textColor: '#F1FBFD',
     accentColor: '#FFD9DA'
   },
   'proj': {
-    backgroundColor: '#82859D',
+    backgroundColor: '#25253D',
     textColor: '#F1FBFD',
     accentColor: '#694F5D'
   },
@@ -177,6 +177,7 @@ function showSection(section) {
 
 
 $(document).ready(function() {
+
   $(".section").css({'opacity': '0', 'display': 'none'})
 
   Object.keys(sections).map(function(key) {
