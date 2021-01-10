@@ -3,8 +3,6 @@
 @multi-padding-right: ~"max(0.25rem, env(safe-area-inset-right))";
 
 .header {
-  flex: 0 0 auto;
-
   padding: 0.5rem 1rem 0.5rem 1rem;
 
   /*
@@ -30,17 +28,13 @@
 }
 
 .menu {
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+
   padding-top: var(--pad-offset);
   flex: 0 0 auto;
   z-index: 3;
-
-  padding: 0.25rem;
-  @supports(padding: max(0px)) {
-    padding-top: var(--pad-offset);
-    padding-left: @multi-padding-left;
-    padding-right: @multi-padding-right;
-  }
 
   color: var(--text-color);
   background: var(--background-color);
@@ -51,9 +45,8 @@
   .options {
     margin-top: calc(20px + 2vh);
   }
-  
-  max-height: 35vh;
 
+  max-height: 35vh;
   width: 100%;
 }
 
@@ -78,9 +71,7 @@
 }
 
 #content {
-  --content-offset: 37.5vh;
   flex: 0 0 auto;
-  --content-width: 90vw;
 
   padding: 0.25rem 0.25rem 0.4rem 0.25rem;
 

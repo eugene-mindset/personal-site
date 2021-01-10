@@ -113,6 +113,8 @@ body {
   --background-color: #25253D;
   --accent-color: #F53E8A;
   --pad-offset: 5vh;
+  --content-offset: 50px;
+  --content-width: 80vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -238,7 +240,6 @@ b {
 }
 /* styling for basic classes common throughout the site */
 .header {
-  flex: 0 0 auto;
   padding: 0.5rem 1rem 0.5rem 1rem;
   /*
   @supports(padding: max(0px)) {
@@ -258,24 +259,18 @@ b {
   min-width: 250px;
 }
 .menu {
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   padding-top: var(--pad-offset);
   flex: 0 0 auto;
   z-index: 3;
-  padding: 0.25rem;
   color: var(--text-color);
   background: var(--background-color);
   font-size: 1rem;
   text-align: center;
   max-height: 35vh;
   width: 100%;
-}
-@supports (padding: max(0px)) {
-  .menu {
-    padding-top: var(--pad-offset);
-    padding-left: max(0.25rem, env(safe-area-inset-left));
-    padding-right: max(0.25rem, env(safe-area-inset-right));
-  }
 }
 .menu .options {
   margin-top: calc(20px + 2vh);
@@ -298,9 +293,7 @@ b {
   margin: 0;
 }
 #content {
-  --content-offset: 37.5vh;
   flex: 0 0 auto;
-  --content-width: 90vw;
   padding: 0.25rem 0.25rem 0.4rem 0.25rem;
   padding-top: var(--content-offset);
   width: var(--content-width);
