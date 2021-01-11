@@ -330,10 +330,12 @@ b {
   opacity: 0;
 }
 .date_loc {
+  /*
   font-weight: 300;
   font-style: italic;
   float: right;
   font-size: inherit;
+  */
 }
 .highlight {
   color: var(--accent-color);
