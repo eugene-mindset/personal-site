@@ -127,8 +127,6 @@ async function animateTranslate(selector, endX, endY, speed) {
         let currX = Math.round(startX + ((this.count/speed) * (endX - startX)));
         let currY = Math.round(startY + ((this.count/speed) * (endY - startY)));
 
-        console.log(currX, currY);
-
         $(selector).css('transform', `translate(${currX}%, ${currY}%)`);
       }
     }).promise().then(resolve);
