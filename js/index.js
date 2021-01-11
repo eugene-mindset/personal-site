@@ -32,8 +32,6 @@ var sections = {
 /*
   Function to handle transition content.
 */
-
-
 function transition(section) {
   // window.scrollTo(0, 0);
 
@@ -84,7 +82,6 @@ function transition(section) {
   }
 */
 
-
 async function animateColorTransition(property, color, speed) {
   return new Promise((resolve) => {
     let startColor = $('body').css(property).trim();
@@ -116,8 +113,6 @@ async function animateColorTransition(property, color, speed) {
     }).promise().then(resolve);
   });
 }
-
-
 
 async function transitionSections(startSection, endSection) {
   // ignore other transitions while one is occuring
@@ -152,7 +147,6 @@ async function transitionSections(startSection, endSection) {
     colorSpeed
   );
 
-
   // we wait on things to visible disappear
   // no waiting on first toggle to not have the page resize twice
   await $(startSelector).animate({opacity: 0}, speed=500).promise();
@@ -161,7 +155,6 @@ async function transitionSections(startSection, endSection) {
   await $(endSelector).toggle(speed=500).promise().then(
     () => $(endSelector).animate({opacity: 1}, speed=500)
   );
-
 
   currentSection = endSection;
   location.hash = endSection;

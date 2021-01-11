@@ -99,7 +99,6 @@
 html,
 body {
   margin: 0;
-  height: 100%;
 }
 :root {
   font-family: "IBM Plex Sans", sans-serif;
@@ -242,40 +241,42 @@ b {
 /* styling for basic classes common throughout the site */
 .header {
   padding: 0.5rem 1rem 0.5rem 1rem;
-  margin-top: 50px;
-  top: 50px;
+  margin: 0 auto;
   /*
   @supports(padding: max(0px)) {
     padding-left: @multi-padding-left;
     padding-right: @multi-padding-right;
   }
   */
-  z-index: 5;
-  background-color: var(--accent-color);
-  color: var(--background-color);
   font-weight: 900;
-  font-size: 1.5rem;
-  /*
-
-  letter-spacing: 0.25rem;
-  overflow: hidden;
+  font-size: 1.75rem;
+  letter-spacing: 0.15rem;
   white-space: nowrap;
   text-align: center;
-  */
+  z-index: 5;
+  width: fit-content;
+  overflow: hidden;
+  background-color: var(--accent-color);
+  color: var(--background-color);
   outline: 8px solid var(--accent-color);
   outline-offset: 10px;
 }
+.options {
+  margin-top: calc(2.5rem);
+  font-size: 1.25rem;
+}
 .menu {
-  padding-top: 20px;
-  flex: 0 0 auto;
+  position: absolute;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+  margin: 0 auto;
+  letter-spacing: 0.075rem;
+  text-align: center;
   z-index: 3;
   color: var(--text-color);
   background: var(--background-color);
-  font-size: 1.2rem;
-  text-align: center;
-}
-.menu .options {
-  margin-top: calc(2.5rem);
 }
 .footer {
   padding: 0.25rem;
