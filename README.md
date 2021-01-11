@@ -10,7 +10,7 @@ Useful checkpoints for me to follow.
 - [ ] Preview this on your phone. Might require to use some basic method of
 hosting the site.
 
-# Technologies
+## Technologies
 
 I used the powerful CSS library Less v3.11.1 to give me more power in structuring my CSS and
 allowing a more 'programmatic' approach to creating the design. I compile the .less files to .css
@@ -26,7 +26,15 @@ requires more than just CSS.
 
 Just me and my thoughts.
 
+### 21 Jan 11
+
+Redoing the design of the site. Almost finished with the mobile design but need to fix a couple of things:
+
+- [X] Fix color transition. It just needs to fade out and then adjust the content and then change color.
+- [X] Center menu only on home page.
+
 ### 20 July 11
+
 ...
 
 ### 20 June 21

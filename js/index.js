@@ -42,11 +42,8 @@ function transition(section) {
     } else {
       transitionSections(currentSection, section);
     }
-  } else if (currentSection == 'home' && section != 'home') {
-    transitionSections('home', section);
-  } else if (currentSection != 'home' && section == 'home') {
-    transitionSections(currentSection, 'home')
   } else {
+    transitionSections(currentSection, section);
   }
 }
 
@@ -82,9 +79,9 @@ function transition(section) {
   }
 */
 
-async function animateColorTransition(property, color, speed) {
+async function animateColorTransition(selector, property, color, speed) {
   return new Promise((resolve) => {
-    let startColor = $('body').css(property).trim();
+    let startColor = $(selector).css(property).trim();
 
     // start color values for RGB channels
     let startR = parseInt("0x" + startColor.slice(1,3));
@@ -108,11 +105,36 @@ async function animateColorTransition(property, color, speed) {
         currG = ('00' + currG.toString(16).toUpperCase()).slice(-2);
         currB = ('00' + currB.toString(16).toUpperCase()).slice(-2);
 
-        $('body').css(property, '#' + currR + currG + currB);
+        $(selector).css(property, '#' + currR + currG + currB);
       }
     }).promise().then(resolve);
   });
 }
+
+async function animateTranslate(selector, endX, endY, speed) {
+  return new Promise((resolve) => {
+    let startMatrix = $(selector).css('transform').replace(/[^0-9\-.,]/g, '').split(',');
+    let rect = $('.menu')[0].getBoundingClientRect();
+
+    let startX = (startMatrix[4] / rect.width).toFixed(2) * 100;
+    let startY = (startMatrix[5] / rect.height).toFixed(2) * 100;
+
+
+    $({count:0}).animate({count:speed}, {
+      duration: speed,
+      step: function() {
+
+        let currX = Math.round(startX + ((this.count/speed) * (endX - startX)));
+        let currY = Math.round(startY + ((this.count/speed) * (endY - startY)));
+
+        console.log(currX, currY);
+
+        $(selector).css('transform', `translate(${currX}%, ${currY}%)`);
+      }
+    }).promise().then(resolve);
+  });
+}
+
 
 async function transitionSections(startSection, endSection) {
   // ignore other transitions while one is occuring
@@ -127,34 +149,49 @@ async function transitionSections(startSection, endSection) {
 
   $('html,body').scrollTop(0);
 
+  // we wait on things to visible disappear
+  // no waiting on first toggle to not have the page resize twice
+  await $(startSelector).animate({opacity: 0}, speed=500).promise();
+
+  $(startSelector).toggle(speed=500);
+  $(endSelector).toggle(speed=500)
+  $(endSelector).animate({opacity: 1}, speed=500)
+
   // need to make a custom function to handle color animations
   let colorSpeed = 750;
   animateColorTransition(
+    'body',
     '--background-color',
     sections[endSection]['backgroundColor'],
     colorSpeed
   );
 
   animateColorTransition(
+    'body',
     '--text-color',
     sections[endSection]['textColor'],
     colorSpeed
   );
 
   animateColorTransition(
+    'body',
     '--accent-color',
     sections[endSection]['accentColor'],
     colorSpeed
   );
 
-  // we wait on things to visible disappear
-  // no waiting on first toggle to not have the page resize twice
-  await $(startSelector).animate({opacity: 0}, speed=500).promise();
+  if (endSection == 'home') {
+    await $('.menu').css({position: "absolute"}, speed=500).promise().then(() => {
+      animateTranslate('.menu', "0", "-50", 500);
+      $('.menu').animate({top: "50%"}, speed=500);
 
-  $(startSelector).toggle(speed=500);
-  await $(endSelector).toggle(speed=500).promise().then(
-    () => $(endSelector).animate({opacity: 1}, speed=500)
-  );
+    });
+  } else {
+    animateTranslate('.menu', "0", "0", 500);
+    await $('.menu').animate({top: "0%"}, speed=500).promise().then(() => {
+      $('.menu').css({position: "relative"}, speed=500);
+    });
+  }
 
   currentSection = endSection;
   location.hash = endSection;
@@ -170,7 +207,8 @@ function hideSection(section) {
 function showSection(section) {
   console.log(`opening ${section}...`);
   $('body').css('--background-color', '#000000');
-}*/
+}
+*/
 
 
 
