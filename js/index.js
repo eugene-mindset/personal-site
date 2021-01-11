@@ -35,6 +35,8 @@ var sections = {
 
 
 function transition(section) {
+  // window.scrollTo(0, 0);
+
   // ...
   if (currentSection != 'home' && section != 'home') {
     if (currentSection == section) {
@@ -128,6 +130,8 @@ async function transitionSections(startSection, endSection) {
   let startSelector = '#' + startSection;
   let endSelector = '#' + endSection;
 
+  $('html,body').scrollTop(0);
+
   // need to make a custom function to handle color animations
   let colorSpeed = 750;
   animateColorTransition(
@@ -147,6 +151,7 @@ async function transitionSections(startSection, endSection) {
     sections[endSection]['accentColor'],
     colorSpeed
   );
+
 
   // we wait on things to visible disappear
   // no waiting on first toggle to not have the page resize twice

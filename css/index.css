@@ -112,7 +112,7 @@ body {
   --text-color: #F1FBFD;
   --background-color: #25253D;
   --accent-color: #F53E8A;
-  --pad-offset: 5vh;
+  --pad-offset: 50px;
   --content-offset: 50px;
   --content-width: 95vw;
   --ul-pad: 75px;
@@ -242,36 +242,37 @@ b {
 /* styling for basic classes common throughout the site */
 .header {
   padding: 0.5rem 1rem 0.5rem 1rem;
+  margin-top: 50px;
+  top: 50px;
   /*
   @supports(padding: max(0px)) {
     padding-left: @multi-padding-left;
     padding-right: @multi-padding-right;
   }
   */
+  z-index: 5;
   background-color: var(--accent-color);
   color: var(--background-color);
   font-weight: 900;
   font-size: 1.5rem;
+  /*
+
   letter-spacing: 0.25rem;
   overflow: hidden;
   white-space: nowrap;
+  text-align: center;
+  */
   outline: 8px solid var(--accent-color);
   outline-offset: 10px;
-  min-width: 250px;
 }
 .menu {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  padding-top: var(--pad-offset);
+  padding-top: 20px;
   flex: 0 0 auto;
   z-index: 3;
   color: var(--text-color);
   background: var(--background-color);
   font-size: 1.2rem;
   text-align: center;
-  height: max-content;
-  width: 100%;
 }
 .menu .options {
   margin-top: calc(2.5rem);

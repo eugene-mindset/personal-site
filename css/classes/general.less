@@ -4,6 +4,8 @@
 
 .header {
   padding: 0.5rem 1rem 0.5rem 1rem;
+  margin-top: 50px;
+  top: 50px;
 
   /*
   @supports(padding: max(0px)) {
@@ -12,29 +14,28 @@
   }
   */
 
+  z-index: 5;
   background-color: var(--accent-color);
   color: var(--background-color);
 
   font-weight: 900;
   font-size: 1.5rem;
+  /*
+
   letter-spacing: 0.25rem;
   overflow: hidden;
   white-space: nowrap;
+  text-align: center;
+  */
 
   outline: 8px solid var(--accent-color);
   outline-offset: 10px;
-
-  min-width: 250px;
 }
 
 .menu {
   //transition: padding-top @speed / 2;
 
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-
-  padding-top: var(--pad-offset);
+  padding-top: 20px;
   flex: 0 0 auto;
   z-index: 3;
 
@@ -47,9 +48,6 @@
   .options {
     margin-top: calc(2.5rem);
   }
-
-  height: max-content;
-  width: 100%;
 }
 
 .footer {
