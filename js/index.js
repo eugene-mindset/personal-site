@@ -145,8 +145,6 @@ async function transitionSections(startSection, endSection) {
   let startSelector = '#' + startSection;
   let endSelector = '#' + endSection;
 
-  $('html,body').scrollTop(0);
-
   // we wait on things to visible disappear
   // no waiting on first toggle to not have the page resize twice
   await $(startSelector).animate({opacity: 0}, speed=500).promise();
@@ -192,7 +190,7 @@ async function transitionSections(startSection, endSection) {
   }
 
   currentSection = endSection;
-  location.hash = endSection;
+  // location.hash = endSection;
   isChanging = false;
 }
 
