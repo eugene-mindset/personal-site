@@ -28,6 +28,8 @@
 }
 
 .menu {
+  transition: padding-top @speed / 2;
+
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -46,7 +48,7 @@
     margin-top: calc(20px + 2vh);
   }
 
-  max-height: 35vh;
+  height: max-content;
   width: 100%;
 }
 

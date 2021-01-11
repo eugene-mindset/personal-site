@@ -114,7 +114,7 @@ body {
   --accent-color: #F53E8A;
   --pad-offset: 5vh;
   --content-offset: 50px;
-  --content-width: 80vw;
+  --content-width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -259,6 +259,7 @@ b {
   min-width: 250px;
 }
 .menu {
+  transition: padding-top 0.25s;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -269,7 +270,7 @@ b {
   background: var(--background-color);
   font-size: 1rem;
   text-align: center;
-  max-height: 35vh;
+  height: max-content;
   width: 100%;
 }
 .menu .options {
