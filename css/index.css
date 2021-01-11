@@ -337,6 +337,7 @@ b {
   font-weight: 300;
   font-style: italic;
   float: right;
+  font-size: inherit;
 }
 .highlight {
   color: var(--accent-color);
