@@ -108,6 +108,10 @@ body {
   font-size: 10pt;
 }
 body {
+  text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
   --text-color: #F1FBFD;
   --background-color: #25253D;
   --accent-color: #F53E8A;
@@ -332,6 +336,8 @@ b {
   opacity: 0;
 }
 .date_loc {
+  font-weight: 300;
+  font-style: italic;
   float: right;
 }
 .highlight {
