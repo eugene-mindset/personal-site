@@ -85,10 +85,12 @@
   font-size: 1rem;
 
   h3 {
-    position: absolute;
+    position: fixed;
+    margin: ~"min(var(--pad-offset), -10px)";
     z-index: -1;
     color: var(--background-color);
     background-color: var(--accent-color);
+    margin-left: calc((var(--content-width) - 100vw)/2);
     font-size: 17.5vw;
     width: 100%;
     opacity: 0.25;
@@ -118,12 +120,7 @@
 }
 
 .date_loc {
-  /*
-  font-weight: 300;
-  font-style: italic;
   float: right;
-  font-size: inherit;
-  */
 }
 
 .highlight {
