@@ -85,14 +85,10 @@
   font-size: 1rem;
 
   h3 {
-    position: fixed;
-    margin: ~"min(var(--pad-offset), -10px)";
+    position: absolute;
     z-index: -1;
     color: var(--background-color);
     background-color: var(--accent-color);
-    margin-left: calc((var(--content-width) - 100vw)/2);
-    padding-left: @multi-padding-left;
-    padding-right: @multi-padding-right;
     font-size: 17.5vw;
     width: 100%;
     opacity: 0.25;

@@ -304,14 +304,10 @@ b {
   width: var(--content-width);
 }
 #content h3 {
-  position: fixed;
-  margin: min(var(--pad-offset), -10px);
+  position: absolute;
   z-index: -1;
   color: var(--background-color);
   background-color: var(--accent-color);
-  margin-left: calc((var(--content-width) - 100vw)/2);
-  padding-left: max(0.25rem, env(safe-area-inset-left));
-  padding-right: max(0.25rem, env(safe-area-inset-right));
   font-size: 17.5vw;
   width: 100%;
   opacity: 0.25;
