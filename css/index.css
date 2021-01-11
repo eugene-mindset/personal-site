@@ -112,6 +112,8 @@ body {
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
   --text-color: #F1FBFD;
   --background-color: #25253D;
   --accent-color: #F53E8A;

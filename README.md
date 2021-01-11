@@ -32,6 +32,7 @@ Redoing the design of the site. Almost finished with the mobile design but need 
 
 - [X] Fix color transition. It just needs to fade out and then adjust the content and then change color.
 - [X] Center menu only on home page.
+- [X] Rework the centering of the menu to not use top.
 
 ### 20 July 11
 
