@@ -116,9 +116,9 @@ body {
   --text-color: #F1FBFD;
   --background-color: #25253D;
   --accent-color: #F53E8A;
-  --pad-offset: 50px;
+  --pad-offset: 25px;
   --content-offset: 250px;
-  --content-width: 98.5vw;
+  --content-width: 95vw;
   --ul-pad: 0px;
   display: flex;
   flex-direction: column;
