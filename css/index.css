@@ -99,6 +99,7 @@
 html,
 body {
   margin: 0;
+  height: 100%;
 }
 :root {
   font-family: "IBM Plex Sans", sans-serif;
@@ -116,7 +117,7 @@ body {
   --background-color: #25253D;
   --accent-color: #F53E8A;
   --pad-offset: 50px;
-  --content-offset: 50px;
+  --content-offset: 250px;
   --content-width: 95vw;
   --ul-pad: 75px;
   display: flex;
@@ -271,8 +272,6 @@ b {
 }
 .menu {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   display: flex;
   flex-direction: column;
   padding-top: 40px;
@@ -303,7 +302,7 @@ b {
 #content {
   flex: 0 0 auto;
   padding: 0.25rem 0.25rem 0.4rem 0.25rem;
-  padding-top: var(--content-offset);
+  margin-top: var(--content-offset);
   font-size: 1rem;
   width: var(--content-width);
 }
@@ -315,7 +314,7 @@ b {
   background-color: var(--accent-color);
   margin-left: calc((var(--content-width) - 100vw)/2);
   font-size: 17.5vw;
-  width: 100%;
+  width: 100vw;
   opacity: 0.25;
   text-align: center;
 }

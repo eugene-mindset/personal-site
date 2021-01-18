@@ -111,23 +111,27 @@ async function animateColorTransition(selector, property, color, speed) {
   });
 }
 
-async function animateTranslate(selector, endX, endY, speed) {
+async function animateMenu(selector, speed, section='home') {
   return new Promise((resolve) => {
     let startMatrix = $(selector).css('transform').replace(/[^0-9\-.,]/g, '').split(',');
-    let rect = $('.menu')[0].getBoundingClientRect();
 
-    let startX = (startMatrix[4] / rect.width).toFixed(2) * 100;
-    let startY = (startMatrix[5] / rect.height).toFixed(2) * 100;
-
+    let startX = parseFloat(startMatrix[4]);
+    let startY = parseFloat(startMatrix[5]);
 
     $({count:0}).animate({count:speed}, {
       duration: speed,
       step: function() {
 
+        let menuHeight = parseFloat($('.menu')[0].getBoundingClientRect().height);
+        let bodyHeight = parseFloat($('html')[0].getBoundingClientRect().height);
+
+        let endX = 0;
+        let endY = section == 'home' ? (bodyHeight - menuHeight) / 2 : 0;
+
         let currX = Math.round(startX + ((this.count/speed) * (endX - startX)));
         let currY = Math.round(startY + ((this.count/speed) * (endY - startY)));
 
-        $(selector).css('transform', `translate(${currX}%, ${currY}%)`);
+        $(selector).css('transform', `translate(${currX}px, ${currY}px)`);
       }
     }).promise().then(resolve);
   });
@@ -144,6 +148,10 @@ async function transitionSections(startSection, endSection) {
 
   let startSelector = '#' + startSection;
   let endSelector = '#' + endSection;
+
+  if (startSection == 'home' && endSection != 'home') {
+    await animateMenu('.menu', 500, endSection);
+  }
 
   // we wait on things to visible disappear
   // no waiting on first toggle to not have the page resize twice
@@ -176,17 +184,9 @@ async function transitionSections(startSection, endSection) {
     colorSpeed
   );
 
+  
   if (endSection == 'home') {
-    await $('.menu').css({position: "absolute"}, speed=500).promise().then(() => {
-      animateTranslate('.menu', "0", "-50", 500);
-      $('.menu').animate({top: "50%"}, speed=500);
-
-    });
-  } else {
-    animateTranslate('.menu', "0", "0", 500);
-    await $('.menu').animate({top: "0%"}, speed=500).promise().then(() => {
-      $('.menu').css({position: "relative"}, speed=500);
-    });
+    await animateMenu('.menu', 500);
   }
 
   currentSection = endSection;
@@ -206,6 +206,7 @@ function showSection(section) {
 }
 */
 
+//parseInt(menuRect.height) + bodyHeight/2
 
 
 $(document).ready(function() {
@@ -216,9 +217,30 @@ $(document).ready(function() {
     $(document).on('click', `#${key}_link`, () => transition(key));
   });
 
+  $('.menu').ready(function() {
+    let menuHeight = parseFloat($('.menu')[0].getBoundingClientRect().height);
+    let bodyHeight = parseFloat($('html')[0].getBoundingClientRect().height);
+
+    $('body').css({'--content-offset': `${menuHeight + 50}px`});
+    $('.menu').css({'transform': 'matrix(1, 0, 0, 1, 0, 0)'});
+    $('.menu').css({'transform': `translateY(${(bodyHeight - menuHeight)/2}px)`});
+  });
+
   if (location.hash != "") {
     transition(location.hash.substring(1));
   }
+
+
+  $(window).on('resize', function() {
+    if (currentSection != 'home') return;
+
+    while(isChanging) {}
+
+    let menuHeight = parseFloat($('.menu')[0].getBoundingClientRect().height);
+    let bodyHeight = parseFloat($('html')[0].getBoundingClientRect().height);
+
+    animateMenu('.menu', 500);
+  })
 
 });
 
