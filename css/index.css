@@ -118,8 +118,8 @@ body {
   --accent-color: #F53E8A;
   --pad-offset: 50px;
   --content-offset: 250px;
-  --content-width: 95vw;
-  --ul-pad: 75px;
+  --content-width: 98.5vw;
+  --ul-pad: 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -208,7 +208,7 @@ h5 {
 }
 /* styling for ul and li tags and other things associated with lists. */
 ul {
-  padding: 0px 0px 0px 20px;
+  padding: 0px var(--ul-pad) 0px 12px;
   margin: 0px 0px 0px 0px;
   list-style-type: none;
 }
@@ -318,15 +318,7 @@ b {
   opacity: 0.25;
   text-align: center;
 }
-#content ul {
-  padding: 0px var(--ul-pad) 0px 20px;
-}
 .section {
-  /*
-  box-sizing: border-box;
-  margin: 0px;
-  padding: 5px 5px 5px 5px;
-  width: 100%;*/
   opacity: 0;
   display: none;
   flex-direction: column;
