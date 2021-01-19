@@ -6,8 +6,8 @@ Making a website to act as an online resume/portfolio. Located at [here](https:/
 
 Useful checkpoints for me to follow.
 
-- [ ] Finish the mobile version of site.
-- [ ] Preview this on your phone. Might require to use some basic method of
+- [X] Finish the mobile version of site.
+- [X] Preview this on your phone. Might require to use some basic method of
 hosting the site.
 
 ## Technologies
