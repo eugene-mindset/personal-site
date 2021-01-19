@@ -280,7 +280,7 @@ b {
   text-align: center;
   z-index: 3;
   color: var(--text-color);
-  background: var(--background-color);
+  background: transparent;
 }
 .footer {
   padding: 0.25rem;
@@ -333,4 +333,22 @@ b {
 }
 .highlight {
   color: var(--accent-color);
+}
+@media only screen and (min-width: 784px) {
+  :root {
+    font-size: 12pt;
+  }
+  body {
+    --content-width: 80vw;
+    --ul-pad: 20%;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  :root {
+    font-size: 14pt;
+  }
+  body {
+    --content-width: 70vw;
+    --ul-pad: 30%;
+  }
 }
