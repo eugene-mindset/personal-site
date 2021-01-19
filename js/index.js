@@ -3,27 +3,27 @@ var isChanging = false; // dont want to process other changes if one is already 
 var currentSection = 'home';
 var sections = {
   'home': {
-    backgroundColor: '#F1FBFD',
-    textColor: '#25253D',
+    backgroundColor: '#25253D',
+    textColor: '#F1FBFD',
     accentColor: '#F53E8A'
   },
   'edu': {
-    backgroundColor: '#4F4964',
+    backgroundColor: '#25253D',
     textColor: '#F1FBFD',
     accentColor: '#2EF7E6'
   },
   'exp': {
-    backgroundColor: '#C7D1DD',
-    textColor: '#25253D',
+    backgroundColor: '#25253D',
+    textColor: '#F1FBFD',
     accentColor: '#008DA3'
   },
   'skll': {
-    backgroundColor: '#686181',
+    backgroundColor: '#25253D',
     textColor: '#F1FBFD',
     accentColor: '#FFD9DA'
   },
   'proj': {
-    backgroundColor: '#82859D',
+    backgroundColor: '#25253D',
     textColor: '#F1FBFD',
     accentColor: '#694F5D'
   },
@@ -32,9 +32,9 @@ var sections = {
 /*
   Function to handle transition content.
 */
-
-
 function transition(section) {
+  // window.scrollTo(0, 0);
+
   // ...
   if (currentSection != 'home' && section != 'home') {
     if (currentSection == section) {
@@ -42,11 +42,8 @@ function transition(section) {
     } else {
       transitionSections(currentSection, section);
     }
-  } else if (currentSection == 'home' && section != 'home') {
-    transitionSections('home', section);
-  } else if (currentSection != 'home' && section == 'home') {
-    transitionSections(currentSection, 'home')
   } else {
+    transitionSections(currentSection, section);
   }
 }
 
@@ -82,10 +79,9 @@ function transition(section) {
   }
 */
 
-
-async function animateColorTransition(property, color, speed) {
+async function animateColorTransition(selector, property, color, speed) {
   return new Promise((resolve) => {
-    let startColor = $('body').css(property).trim();
+    let startColor = $(selector).css(property).trim();
 
     // start color values for RGB channels
     let startR = parseInt("0x" + startColor.slice(1,3));
@@ -109,12 +105,37 @@ async function animateColorTransition(property, color, speed) {
         currG = ('00' + currG.toString(16).toUpperCase()).slice(-2);
         currB = ('00' + currB.toString(16).toUpperCase()).slice(-2);
 
-        $('body').css(property, '#' + currR + currG + currB);
+        $(selector).css(property, '#' + currR + currG + currB);
       }
     }).promise().then(resolve);
   });
 }
 
+async function animateMenu(selector, speed, section='home') {
+  return new Promise((resolve) => {
+    let startMatrix = $(selector).css('transform').replace(/[^0-9\-.,]/g, '').split(',');
+
+    let startX = parseFloat(startMatrix[4]);
+    let startY = parseFloat(startMatrix[5]);
+
+    $({count:0}).animate({count:speed}, {
+      duration: speed,
+      step: function() {
+
+        let menuHeight = parseFloat($('.menu')[0].getBoundingClientRect().height);
+        let bodyHeight = parseFloat($('html')[0].getBoundingClientRect().height);
+
+        let endX = 0;
+        let endY = section == 'home' ? (bodyHeight - menuHeight) / 2 : 0;
+
+        let currX = Math.round(startX + ((this.count/speed) * (endX - startX)));
+        let currY = Math.round(startY + ((this.count/speed) * (endY - startY)));
+
+        $(selector).css('transform', `translate(${currX}px, ${currY}px)`);
+      }
+    }).promise().then(resolve);
+  });
+}
 
 
 async function transitionSections(startSection, endSection) {
@@ -128,38 +149,48 @@ async function transitionSections(startSection, endSection) {
   let startSelector = '#' + startSection;
   let endSelector = '#' + endSection;
 
-  // need to make a custom function to handle color animations
-  let colorSpeed = 750;
-  animateColorTransition(
-    '--background-color',
-    sections[endSection]['backgroundColor'],
-    colorSpeed
-  );
-
-  animateColorTransition(
-    '--text-color',
-    sections[endSection]['textColor'],
-    colorSpeed
-  );
-
-  animateColorTransition(
-    '--accent-color',
-    sections[endSection]['accentColor'],
-    colorSpeed
-  );
+  if (startSection == 'home' && endSection != 'home') {
+    await animateMenu('.menu', 500, endSection);
+  }
 
   // we wait on things to visible disappear
   // no waiting on first toggle to not have the page resize twice
   await $(startSelector).animate({opacity: 0}, speed=500).promise();
 
   $(startSelector).toggle(speed=500);
-  await $(endSelector).toggle(speed=500).promise().then(
-    () => $(endSelector).animate({opacity: 1}, speed=500)
+  $(endSelector).toggle(speed=500)
+  $(endSelector).animate({opacity: 1}, speed=500)
+
+  // need to make a custom function to handle color animations
+  let colorSpeed = 750;
+  animateColorTransition(
+    'body',
+    '--background-color',
+    sections[endSection]['backgroundColor'],
+    colorSpeed
   );
 
+  animateColorTransition(
+    'body',
+    '--text-color',
+    sections[endSection]['textColor'],
+    colorSpeed
+  );
+
+  animateColorTransition(
+    'body',
+    '--accent-color',
+    sections[endSection]['accentColor'],
+    colorSpeed
+  );
+
+  
+  if (endSection == 'home') {
+    await animateMenu('.menu', 500);
+  }
 
   currentSection = endSection;
-  location.hash = endSection;
+  // location.hash = endSection;
   isChanging = false;
 }
 
@@ -172,20 +203,44 @@ function hideSection(section) {
 function showSection(section) {
   console.log(`opening ${section}...`);
   $('body').css('--background-color', '#000000');
-}*/
+}
+*/
 
+//parseInt(menuRect.height) + bodyHeight/2
 
 
 $(document).ready(function() {
+
   $(".section").css({'opacity': '0', 'display': 'none'})
 
   Object.keys(sections).map(function(key) {
     $(document).on('click', `#${key}_link`, () => transition(key));
   });
 
+  $('.menu').ready(function() {
+    let menuHeight = parseFloat($('.menu')[0].getBoundingClientRect().height);
+    let bodyHeight = parseFloat($('html')[0].getBoundingClientRect().height);
+
+    $('body').css({'--content-offset': `${menuHeight + 50}px`});
+    $('.menu').css({'transform': 'matrix(1, 0, 0, 1, 0, 0)'});
+    $('.menu').css({'transform': `translateY(${(bodyHeight - menuHeight)/2}px)`});
+  });
+
   if (location.hash != "") {
     transition(location.hash.substring(1));
   }
+
+
+  $(window).on('resize', function() {
+    if (currentSection != 'home') return;
+
+    while(isChanging) {}
+
+    let menuHeight = parseFloat($('.menu')[0].getBoundingClientRect().height);
+    let bodyHeight = parseFloat($('html')[0].getBoundingClientRect().height);
+
+    animateMenu('.menu', 500);
+  })
 
 });
 

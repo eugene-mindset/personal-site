@@ -3,44 +3,56 @@
 @multi-padding-right: ~"max(0.25rem, env(safe-area-inset-right))";
 
 .header {
-  flex: 0 0 auto;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  margin: 0 auto;
 
-  padding: 0.1rem 0.25rem 0.1rem 0.25rem;
+  /*
   @supports(padding: max(0px)) {
     padding-left: @multi-padding-left;
     padding-right: @multi-padding-right;
   }
+  */
+
+  font-weight: 900;
+  font-size: 1.75rem;
+  letter-spacing: 0.15rem;
+  white-space: nowrap;
+  text-align: center;
+
+  z-index: 5;
+  width: fit-content;
+  overflow: hidden;
 
   background-color: var(--accent-color);
+  color: var(--background-color);
 
-  a {
-    --accent-color: var(--background-color);
-  }
+  outline: 8px solid var(--accent-color);
+  outline-offset: 10px;
+}
 
-  font-weight: 500;
-  font-size: 1rem;
-  letter-spacing: 2px;
-
-  .menu_btn {
-    float: right;
-  }
+.options {
+  margin-top: calc(2.5rem);
+  font-size: 1.25rem;
 }
 
 .menu {
-  flex: 0 0 auto;
+  //transition: padding-top @speed / 2;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
 
-  padding: 0.25rem;
-  @supports(padding: max(0px)) {
-    padding-left: @multi-padding-left;
-    padding-right: @multi-padding-right;
-  }
+  padding-top: 40px;
+  margin: 0 auto;
 
-  text-align: left;
+  letter-spacing: 0.075rem;
+  text-align: center;
+
+  z-index: 3;
 
   color: var(--text-color);
-
-  font-size: 0.75rem;
+  background: transparent;
 }
+
 
 .footer {
   padding: 0.25rem;
@@ -63,35 +75,30 @@
 }
 
 #content {
-  background-color: var(--background-color);
-  flex: 1 0 auto;
+  flex: 0 0 auto;
 
   padding: 0.25rem 0.25rem 0.4rem 0.25rem;
-  @supports(padding: max(0px)) {
-    padding-left: @multi-padding-left;
-    padding-right: @multi-padding-right;
-  }
+
+  margin-top: var(--content-offset);
+  font-size: 1rem;
 
   h3 {
+    position: fixed;
+    margin: ~"min(var(--pad-offset), -10px)";
+    z-index: -1;
     color: var(--background-color);
     background-color: var(--accent-color);
-    margin-left: calc(-1 * @multi-padding-left);
-    margin-right: calc(-1 * @multi-padding-right);
-    margin-bottom: 0.25rem;
-    padding-left: @multi-padding-left;
-    padding-right: @multi-padding-right;
-    padding-bottom: 0.15rem;
+    margin-left: calc((var(--content-width) - 100vw)/2);
+    font-size: 17.5vw;
+    width: 100vw;
+    opacity: 0.25;
+    text-align: center;
   }
 
-  font-size: 0.575rem;
+  width: var(--content-width);
 }
 
 .section {
-  /*
-  box-sizing: border-box;
-  margin: 0px;
-  padding: 5px 5px 5px 5px;
-  width: 100%;*/
   opacity: 0;
   display: none;
   flex-direction: column;
