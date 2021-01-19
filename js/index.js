@@ -239,6 +239,7 @@ $(document).ready(function() {
     let menuHeight = parseFloat($('.menu')[0].getBoundingClientRect().height);
     let bodyHeight = parseFloat($('html')[0].getBoundingClientRect().height);
 
+    $('body').css({'--content-offset': `${menuHeight + 50}px`});
     animateMenu('.menu', 500);
   })
 
