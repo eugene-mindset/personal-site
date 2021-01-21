@@ -10,23 +10,28 @@ var sections = {
   'edu': {
     backgroundColor: '#25253D',
     textColor: '#F1FBFD',
-    accentColor: '#2EF7E6'
+    accentColor: '#3EE8F7'
   },
   'exp': {
     backgroundColor: '#25253D',
     textColor: '#F1FBFD',
-    accentColor: '#008DA3'
+    accentColor: '#FF87EB'
   },
   'skll': {
     backgroundColor: '#25253D',
     textColor: '#F1FBFD',
-    accentColor: '#FFD9DA'
+    accentColor: '#FF8291'
   },
   'proj': {
     backgroundColor: '#25253D',
     textColor: '#F1FBFD',
-    accentColor: '#694F5D'
+    accentColor: '#5CF27F'
   },
+  'hobb': {
+    backgroundColor: '#25253D',
+    textColor: '#F1FBFD',
+    accentColor: '#3EF7CF'
+  }
 }
 
 /*
