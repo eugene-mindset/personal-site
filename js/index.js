@@ -37,7 +37,7 @@ var sections = {
 /*
   Function to handle transition content.
 */
-function transition(section) {
+function transition(section, speed=500) {
   // window.scrollTo(0, 0);
 
   // ...
@@ -189,13 +189,12 @@ async function transitionSections(startSection, endSection) {
     colorSpeed
   );
 
-  
   if (endSection == 'home') {
-    await animateMenu('.menu', 500);
+    await animateMenu('.menu', 500, endSection);
   }
 
   currentSection = endSection;
-  // location.hash = endSection;
+  location.hash = endSection;
   isChanging = false;
 }
 
@@ -229,12 +228,11 @@ $(document).ready(function() {
     $('body').css({'--content-offset': `${menuHeight + 50}px`});
     $('.menu').css({'transform': 'matrix(1, 0, 0, 1, 0, 0)'});
     $('.menu').css({'transform': `translateY(${(bodyHeight - menuHeight)/2}px)`});
+
+    if (location.hash != "") {
+      transition(location.hash.substring(1));
+    }
   });
-
-  if (location.hash != "") {
-    transition(location.hash.substring(1));
-  }
-
 
   $(window).on('resize', function() {
     if (currentSection != 'home') return;
@@ -245,8 +243,14 @@ $(document).ready(function() {
     let bodyHeight = parseFloat($('html')[0].getBoundingClientRect().height);
 
     $('body').css({'--content-offset': `${menuHeight + 50}px`});
-    animateMenu('.menu', 500);
+    animateMenu('.menu', 500, endSection);
   })
 
+  $('.grid-contain > div').each(function(index) {
+    $(this).css({'--dur': `${1 + (index * 0.25)}s`});
+    $(this).addClass('fadeIn');
+  });
+
+  
 });
 
