@@ -106,7 +106,7 @@ body {
   background-color: #25253D;
   color: #F1FBFD;
   scroll-behavior: smooth;
-  font-size: 10pt;
+  font-size: 9pt;
 }
 body {
   text-size-adjust: 100%;
@@ -355,6 +355,7 @@ b {
   border: 3px solid var(--accent-color);
   padding: 15px;
   width: 100%;
+  --hover-color: var(--accent-color);
 }
 .grid-contain > div ul {
   margin: auto;
@@ -425,6 +426,9 @@ b {
   animation-name: fadeIn;
 }
 @media only screen and (min-width: 784px) {
+  :root {
+    font-size: 10pt;
+  }
   body {
     --content-width: 80vw;
     --ul-pad: 20%;
@@ -435,7 +439,7 @@ b {
 }
 @media only screen and (min-width: 1280px) {
   :root {
-    font-size: 12pt;
+    font-size: 11pt;
   }
   .grid-contain {
     grid-template-columns: 1fr 1fr 1fr 1fr;
