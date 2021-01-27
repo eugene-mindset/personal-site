@@ -134,6 +134,7 @@ a {
 }
 a:active,
 a:focus {
+  transition: text-shadow calc(0.5s / 2);
   text-shadow: 0 0 10px var(--accent-color);
 }
 a:hover {
