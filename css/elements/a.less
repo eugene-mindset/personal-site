@@ -4,10 +4,10 @@ a {
   font-weight: 600;
   text-decoration: none;
   color: var(--accent-color);
+  transition: text-shadow @speed / 2;
 }
 
 a:active, a:focus {
-  transition: text-shadow @speed / 2;
   text-shadow: 0 0 10px var(--accent-color);
 }
 
@@ -28,7 +28,7 @@ a.fancy:before {
   left: 50%;
   color: inherit;
   background-color: currentColor;
-  transition: width @speed/1.5 ease-in-out, left @speed/1.5 ease-in-out;
+  transition: width calc(@speed/1.5) ease-in-out, left calc(@speed/1.5) ease-in-out;
 }
 
 a.fancy:hover:before {
@@ -37,11 +37,10 @@ a.fancy:hover:before {
 }
 
 a.fancy:active, a.fancy:focus {
-  transition: text-shadow @speed / 2;
   text-shadow: 0 0 10px var(--accent-color);
 }
 
 a.fancy:active:before a.fancy:focus:before {
-  transition: text-shadow @speed / 2;
+  transition: text-shadow calc(@speed / 2);
   box-shadow: 0 0 10px var(--accent-color);
 }
