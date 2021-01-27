@@ -235,7 +235,6 @@ $(document).ready(function() {
   });
 
   $(window).on('resize', function() {
-    if (currentSection != 'home') return;
 
     while(isChanging) {}
 
@@ -243,14 +242,21 @@ $(document).ready(function() {
     let bodyHeight = parseFloat($('html')[0].getBoundingClientRect().height);
 
     $('body').css({'--content-offset': `${menuHeight + 50}px`});
-    animateMenu('.menu', 500, endSection);
-  })
+
+    if (currentSection == 'home') {
+      animateMenu('.menu', 500, endSection);
+    }
+  });
 
   $('.grid-contain > div').each(function(index) {
     $(this).css({'--dur': `${1 + (index * 0.25)}s`});
     $(this).addClass('fadeIn');
   });
 
-  
+  $('h1').each(function(index) {
+    $(this).attr('unselectable', "on");
+    $(this).addClass('unselectable')
+  });
+
 });
 

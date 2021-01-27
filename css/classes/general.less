@@ -2,6 +2,13 @@
 @multi-padding-left: ~"max(0.25rem, env(safe-area-inset-left))";
 @multi-padding-right: ~"max(0.25rem, env(safe-area-inset-right))";
 
+.unselectable {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 .header {
   padding: 0.5rem 1rem 0.5rem 1rem;
   margin: 0 auto;
@@ -36,7 +43,6 @@
 }
 
 .menu {
-  //transition: padding-top @speed / 2;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -44,7 +50,7 @@
   padding-top: 40px;
   margin: 0 auto;
 
-  letter-spacing: 0.075rem;
+  letter-spacing: 0.005rem;
   text-align: center;
 
   z-index: 3;
@@ -82,7 +88,7 @@
   margin-top: var(--content-offset);
   font-size: 1rem;
 
-  h3 {
+  h1 {
     position: fixed;
     margin: ~"min(var(--pad-offset), -10px)";
     z-index: -1;
