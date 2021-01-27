@@ -131,7 +131,6 @@ a {
   font-weight: 600;
   text-decoration: none;
   color: var(--accent-color);
-  transition: text-shadow 0.5s / 2;
 }
 a:active,
 a:focus {
