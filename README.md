@@ -34,6 +34,10 @@ Added a hobbies section (WIP). Working on each section to give it more personali
 - [ ] Add some interesting way of conveying the timelines of items. Maybe a drop down menu kind of thing or have a line running through the dates.
 - [ ] Have relevant skills contain projects subsections
 - [ ] Make it so some of this information can be loaded from a JSON file.
+- [ ] Refactor CSS code to better structure properties and make it apparent what things should do what
+- [ ] Refactor JavaScript code to make it clear what certain blocks are doing. Make it more configurable.
+- [ ] Cleanup HTML
+- [ ] Provide an icon for page
 
 ### 21 Jan 11
 
