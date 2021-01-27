@@ -26,6 +26,15 @@ requires more than just CSS.
 
 Just me and my thoughts.
 
+## 21 Jan 27
+
+Added a hobbies section (WIP). Working on each section to give it more personality, currently on skills.
+
+- [ ] Make menu links more obvious that they are menu links. Maybe have the surrounding text of the menu fade in a bit after.
+- [ ] Add some interesting way of conveying the timelines of items. Maybe a drop down menu kind of thing or have a line running through the dates.
+- [ ] Have relevant skills contain projects subsections
+- [ ] Make it so some of this information can be loaded from a JSON file.
+
 ### 21 Jan 11
 
 Redoing the design of the site. Almost finished with the mobile design but need to fix a couple of things:
