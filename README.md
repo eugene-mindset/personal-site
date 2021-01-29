@@ -30,12 +30,12 @@ Just me and my thoughts.
 
 Added a hobbies section (WIP). Working on each section to give it more personality, currently on skills.
 
-- [ ] Make menu links more obvious that they are menu links. Maybe have the surrounding text of the menu fade in a bit after.
+- [ ] Make menu links more obvious that they are menu links. Maybe have the surrounding text of the menu fade in a bit after. #7
 - [ ] Add some interesting way of conveying the timelines of items. Maybe a drop down menu kind of thing or have a line running through the dates.
 - [ ] Have relevant skills contain projects subsections
 - [ ] Make it so some of this information can be loaded from a JSON file.
-- [ ] Refactor CSS code to better structure properties and make it apparent what things should do what
-- [ ] Refactor JavaScript code to make it clear what certain blocks are doing. Make it more configurable.
+- [ ] Refactor CSS code to better structure properties and make it apparent what things should do what. #8
+- [ ] Refactor JavaScript code to make it clear what certain blocks are doing. Make it more configurable. #9
 - [ ] Cleanup HTML
 - [ ] Provide an icon for page
 
