@@ -1,6 +1,3 @@
-/* styling for basic classes common throughout the site */
-@multi-padding-left: ~"max(0.25rem, env(safe-area-inset-left))";
-@multi-padding-right: ~"max(0.25rem, env(safe-area-inset-right))";
 
 .unselectable {
   -webkit-user-select: none;
@@ -9,117 +6,42 @@
   user-select: none;
 }
 
-.header {
-  padding: 0.5rem 1rem 0.5rem 1rem;
-  margin: 0 auto;
+.color {
+  color: var(--accent-color);
+  background-color: var(--background-color);
+}
 
-  /*
-  @supports(padding: max(0px)) {
-    padding-left: @multi-padding-left;
-    padding-right: @multi-padding-right;
-  }
-  */
-
-  font-weight: 900;
-  font-size: 1.75rem;
-  letter-spacing: 0.15rem;
-  white-space: nowrap;
-  text-align: center;
-
-  z-index: 5;
-  width: fit-content;
-  overflow: hidden;
-
-  background-color: var(--accent-color);
+.color_reverse {
   color: var(--background-color);
-
-  outline: 8px solid var(--accent-color);
-  outline-offset: 10px;
+  background-color: var(--accent-color);
 }
 
-.options {
-  margin-top: calc(2.5rem);
-  font-size: 1.25rem;
+.color_accent {
+  color: var(--accent-color);
 }
 
-.menu {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
+.color_text {
+  color: var(--text-color);
+}
 
-  padding-top: 40px;
-  margin: 0 auto;
+.background_header {
+  position: fixed;
+  z-index: -1;
 
-  letter-spacing: 0.005rem;
+  margin: ~"min(var(--pad-offset), -10px)";
+  margin-left: calc((var(--content-width) - 100vw)/2);
+  width: 100vw;
+
+  font-size: 17.5vw;
   text-align: center;
 
-  z-index: 3;
-
-  color: var(--text-color);
-  background: transparent;
-}
-
-
-.footer {
-  padding: 0.25rem;
-
-  background-color: @extra-color-1;
-
-  @supports(padding: max(0px)) {
-    padding-left: @multi-padding-left;
-    padding-right: @multi-padding-right;
-  }
-
-  font-size: 0.6rem;
-  flex: 0 0 auto;
-
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-}
-
-#content {
-  flex: 0 0 auto;
-
-  padding: 0.25rem 0.25rem 0.4rem 0.25rem;
-
-  margin-top: var(--content-offset);
-  font-size: 1rem;
-
-  h1 {
-    position: fixed;
-    margin: ~"min(var(--pad-offset), -10px)";
-    z-index: -1;
-    color: var(--background-color);
-    background-color: var(--accent-color);
-    margin-left: calc((var(--content-width) - 100vw)/2);
-    font-size: 17.5vw;
-    width: 100vw;
-    opacity: 0.25;
-    text-align: center;
-  }
-
-  width: var(--content-width);
-}
-
-.section {
-  opacity: 0;
-  display: none;
-  flex-direction: column;
+  opacity: 0.25;
 }
 
 .hidden {
   opacity: 0;
 }
 
-.date_loc {
+.thin {
   font-weight: 300;
-  font-style: italic;
-  float: right;
-}
-
-.highlight {
-  color: var(--accent-color);
 }

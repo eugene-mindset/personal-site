@@ -1,0 +1,92 @@
+/* styling for basic classes common throughout the site */
+@multi-padding-left: ~"max(0.25rem, env(safe-area-inset-left))";
+@multi-padding-right: ~"max(0.25rem, env(safe-area-inset-right))";
+
+
+
+.header {
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  margin: 0 auto;
+
+  /*
+  @supports(padding: max(0px)) {
+    padding-left: @multi-padding-left;
+    padding-right: @multi-padding-right;
+  }
+  */
+
+  color: var(--background-color);
+  background-color: var(--accent-color);
+
+  font-weight: 900;
+  font-size: 2.15rem;
+  letter-spacing: 0.1275rem;
+  white-space: nowrap;
+  text-align: center;
+
+  z-index: 5;
+  width: fit-content;
+  overflow: hidden;
+
+  outline: 8px solid var(--accent-color);
+  outline-offset: 10px;
+}
+
+.options {
+  margin-top: calc(2.5rem);
+  font-size: 1.25rem;
+}
+
+.menu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+
+  padding-top: 40px;
+  margin: 0 auto;
+
+  letter-spacing: 0.005rem;
+  text-align: center;
+
+  z-index: 3;
+}
+
+
+.footer {
+  padding: 0.25rem;
+
+  background-color: @extra-color-1;
+
+  @supports(padding: max(0px)) {
+    padding-left: @multi-padding-left;
+    padding-right: @multi-padding-right;
+  }
+
+  font-size: 0.6rem;
+  flex: 0 0 auto;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+#content {
+  flex: 0 0 auto;
+
+  padding: 0.25rem 0.25rem 0.4rem 0.25rem;
+
+  margin-top: var(--content-offset);
+  font-size: 1rem;
+
+  width: var(--content-width);
+}
+
+.section {
+  opacity: 0;
+  display: none;
+  flex-direction: column;
+}
+
+
