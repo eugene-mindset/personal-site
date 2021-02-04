@@ -244,7 +244,7 @@ $(document).ready(function() {
     $('body').css({'--content-offset': `${menuHeight + 50}px`});
 
     if (currentSection == 'home') {
-      animateMenu('.menu', 500, endSection);
+      animateMenu('.menu', 500, 'home');
     }
   });
 

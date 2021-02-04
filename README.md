@@ -31,7 +31,7 @@ Just me and my thoughts.
 
 Added a hobbies section (WIP). Working on each section to give it more personality, currently on skills.
 
-- [ ] Make menu links more obvious that they are menu links. Maybe have the surrounding text of the menu fade in a bit after.
+- [ ] Make menu links more obvious that they are menu links. Maybe have the surrounding text of the menu fade in a bit after. #7
 - [ ] Add some interesting way of conveying the timelines of items. Maybe a drop down menu kind of thing or have a line running through the dates.
 - [ ] Have relevant skills contain projects subsections
 - [ ] Make it so some of this information can be loaded from a JSON file.
