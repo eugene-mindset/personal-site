@@ -25,6 +25,8 @@ requires more than just CSS.
 
 Just me and my thoughts.
 
+## 21 Feb 3
+
 ## 21 Jan 27
 
 Added a hobbies section (WIP). Working on each section to give it more personality, currently on skills.
