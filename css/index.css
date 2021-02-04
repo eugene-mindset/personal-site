@@ -118,7 +118,7 @@ body {
   --accent-color: #F53E8A;
   --pad-offset: 25px;
   --content-offset: 250px;
-  --content-width: 95vw;
+  --content-width: 90vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -285,6 +285,16 @@ i {
   font-weight: 300;
 }
 /* styling for basic classes common throughout the site */
+.menu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+  margin: 0 auto;
+  letter-spacing: 0.005rem;
+  text-align: center;
+  z-index: 3;
+}
 .header {
   padding: 0.5rem 1rem 0.5rem 1rem;
   margin: 0 auto;
@@ -310,33 +320,6 @@ i {
 .options {
   margin-top: calc(2.5rem);
   font-size: 1.25rem;
-}
-.menu {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  padding-top: 40px;
-  margin: 0 auto;
-  letter-spacing: 0.005rem;
-  text-align: center;
-  z-index: 3;
-}
-.footer {
-  padding: 0.25rem;
-  background-color: #3B3249;
-  font-size: 0.6rem;
-  flex: 0 0 auto;
-}
-@supports (padding: max(0px)) {
-  .footer {
-    padding-left: max(0.25rem, env(safe-area-inset-left));
-    padding-right: max(0.25rem, env(safe-area-inset-right));
-  }
-}
-.footer ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
 }
 #content {
   flex: 0 0 auto;
