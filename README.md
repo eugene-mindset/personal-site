@@ -12,9 +12,8 @@ hosting the site.
 
 ## Technologies
 
-I used the powerful CSS library Less v3.11.1 to give me more power in structuring my CSS and
-allowing a more 'programmatic' approach to creating the design. I compile the .less files to .css
-by using the Less compiler, which is installed through npm. To compile the files, I simply:
+I used the Less library to give me more power in structuring my CSS. I compile the .less files to .css
+by using its compiler, which is installed through npm. To compile the files, I simply:
 
 1. Locate the root of repo
 1. Enter the command ```lessc ./css/main.less ./css/index.css```
@@ -34,9 +33,9 @@ Added a hobbies section (WIP). Working on each section to give it more personali
 - [ ] Add some interesting way of conveying the timelines of items. Maybe a drop down menu kind of thing or have a line running through the dates.
 - [ ] Have relevant skills contain projects subsections
 - [ ] Make it so some of this information can be loaded from a JSON file.
-- [ ] Refactor CSS code to better structure properties and make it apparent what things should do what. #8
-- [ ] Refactor JavaScript code to make it clear what certain blocks are doing. Make it more configurable. #9
-- [ ] Cleanup HTML
+- [X] Refactor CSS code to better structure properties and make it apparent what things should do what
+- [ ] Refactor JavaScript code to make it clear what certain blocks are doing. Make it more configurable.
+- [X] Cleanup HTML
 - [ ] Provide an icon for page
 
 ### 21 Jan 11
