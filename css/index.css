@@ -120,9 +120,6 @@ body {
   --content-offset: 250px;
   --content-width: 95vw;
   --ul-pad: 0px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   color: #F1FBFD;
   background-color: transparent;
 }
@@ -253,41 +250,37 @@ b {
 }
 .header {
   padding: 1rem 1rem 1rem 1rem;
-  margin: auto;
-  margin-left: 25px;
-  /*
-  @supports(padding: max(0px)) {
-    padding-left: @multi-padding-left;
-    padding-right: @multi-padding-right;
-  }
-  */
   font-weight: 900;
-  font-size: min(3.5rem, 72pt);
+  font-size: min(max(6vw, 1.25rem), 2.5rem);
   letter-spacing: 0.15rem;
-  white-space: nowrap;
-  text-align: center;
+  text-overflow: ellipsis;
   z-index: 5;
-  width: fit-content;
-  overflow: hidden;
   background-color: var(--accent-color);
   color: var(--background-color);
-  outline: 8px solid var(--accent-color);
-  outline-offset: 10px;
+}
+.header a {
+  color: var(--background-color);
+  text-align: center;
 }
 .options {
-  font-size: div(min(0.7rem, 15pt), 6) ;
+  font-size: 1rem;
+  text-align: center;
 }
 .menu {
-  position: absolute;
   display: flex;
   flex-direction: column;
-  padding-top: 40px;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0px;
   margin: 0 auto;
   letter-spacing: 0.005rem;
-  text-align: right;
   z-index: 3;
   color: var(--text-color);
   background: transparent;
+  overflow-wrap: break-word;
 }
 .footer {
   padding: 0.25rem;
@@ -309,7 +302,7 @@ b {
 #content {
   flex: 0 0 auto;
   padding: 0.25rem 0.25rem 0.4rem 0.25rem;
-  margin-top: var(--content-offset);
+  margin-top: 0;
   font-size: 1rem;
   /*
   h1 {
@@ -424,6 +417,11 @@ b {
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
 }
+@media only screen and (max-width: 480px) {
+  :root {
+    font-size: 10px;
+  }
+}
 @media only screen and (min-width: 784px) {
   :root {
     font-size: 14pt;
@@ -434,6 +432,27 @@ b {
   }
   .menu {
     flex-direction: row-reverse;
+    align-items: center;
+  }
+  .header {
+    margin-left: 15px;
+    width: 100%;
+  }
+  .header a {
+    word-spacing: 100%;
+    width: min-intrinsic;
+    width: -webkit-min-content;
+    width: -moz-min-content;
+    width: min-content;
+    display: table-caption;
+    display: -ms-grid;
+    -ms-grid-columns: min-content;
+    text-align: left;
+  }
+  .options {
+    text-align: right;
+    min-width: fit-content;
+    margin-left: 100px;
   }
   .grid-contain {
     grid-template-columns: 1fr 1fr 1fr;
