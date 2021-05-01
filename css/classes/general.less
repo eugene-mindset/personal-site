@@ -10,8 +10,9 @@
 }
 
 .header {
-  padding: 0.5rem 1rem 0.5rem 1rem;
-  margin: 0 auto;
+  padding: 1rem 1rem 1rem 1rem;
+  margin: auto;
+  margin-left: 25px;
 
   /*
   @supports(padding: max(0px)) {
@@ -21,7 +22,7 @@
   */
 
   font-weight: 900;
-  font-size: 1.75rem;
+  font-size: ~"min(3.5rem, 72pt)";
   letter-spacing: 0.15rem;
   white-space: nowrap;
   text-align: center;
@@ -35,11 +36,11 @@
 
   outline: 8px solid var(--accent-color);
   outline-offset: 10px;
+
 }
 
 .options {
-  margin-top: calc(2.5rem);
-  font-size: 1.25rem;
+  font-size: ~"div(min(0.7rem, 15pt), 6) ";
 }
 
 .menu {
@@ -51,7 +52,7 @@
   margin: 0 auto;
 
   letter-spacing: 0.005rem;
-  text-align: center;
+  text-align: right;
 
   z-index: 3;
 
@@ -88,6 +89,7 @@
   margin-top: var(--content-offset);
   font-size: 1rem;
 
+  /*
   h1 {
     position: fixed;
     margin: ~"min(var(--pad-offset), -10px)";
@@ -100,13 +102,12 @@
     opacity: 0.25;
     text-align: center;
   }
+  */
 
   width: var(--content-width);
 }
 
 .section {
-  opacity: 0;
-  display: none;
   flex-direction: column;
 }
 
@@ -117,7 +118,6 @@
 .date_loc {
   font-weight: 300;
   font-style: italic;
-  float: right;
 }
 
 .highlight {

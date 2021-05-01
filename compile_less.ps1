@@ -1,0 +1,1 @@
+lessc ./css/main.less ./css/index.css

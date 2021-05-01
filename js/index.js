@@ -212,7 +212,7 @@ function showSection(section) {
 
 //parseInt(menuRect.height) + bodyHeight/2
 
-
+/*
 $(document).ready(function() {
 
   $(".section").css({'opacity': '0', 'display': 'none'})
@@ -260,3 +260,4 @@ $(document).ready(function() {
 
 });
 
+*/
