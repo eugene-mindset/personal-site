@@ -473,6 +473,9 @@ b {
   :root {
     font-size: 10px;
   }
+  body {
+    --menu-hidden-height: -31px;
+  }
 }
 @media only screen and (min-width: 784px) {
   :root {
