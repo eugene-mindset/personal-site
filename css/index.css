@@ -264,7 +264,7 @@ b {
   color: var(--background-color);
   text-align: center;
 }
-#main-menu.options {
+#main-menu .options {
   margin-top: 15px;
   font-size: 1rem;
   text-align: center;
@@ -319,7 +319,6 @@ b {
   font-size: 0.8rem;
 }
 #bar-menu .home {
-  display: block;
   background-color: var(--accent-color);
   font-size: 1rem;
   padding: 10px 1rem;
@@ -327,6 +326,9 @@ b {
   height: 100%;
   font-weight: 900;
   letter-spacing: 0.15rem;
+}
+#bar-menu .home a {
+  display: block;
 }
 #bar-menu .drop {
   display: none;
