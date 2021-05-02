@@ -274,12 +274,11 @@ $.fn.isInViewport = function() {
 
 var prevScrollPos = window.pageYOffset;
 window.onscroll = function() {
-  console.log(!$('.options').is(':visible'));
   var currentScrollPos = window.pageYOffset;
   if (currentScrollPos == 0)
   {
     $("#bar-menu").removeClass("appear");
-  } else if ((prevScrollPos > currentScrollPos) && !($('.options').isInViewport())) {
+  } else if ((prevScrollPos > currentScrollPos) && !($('#main-menu .options').isInViewport())) {
     $("#bar-menu").addClass("appear");
   } else {
     $("#bar-menu").removeClass("appear");
