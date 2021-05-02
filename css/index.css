@@ -315,7 +315,7 @@ b {
 #bar-menu .drop {
   display: none;
   flex: 0;
-  background-color: var(--background-color);
+  background-color: #F1FBFD;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   padding: 5px 10px;
@@ -324,7 +324,7 @@ b {
   min-width: 0px;
   width: 25px;
   height: 2px;
-  background-color: var(--accent-color);
+  background-color: #25253D;
   margin: 6px 0;
   display: block;
 }
