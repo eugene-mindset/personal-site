@@ -119,6 +119,7 @@ body {
   --pad-offset: 25px;
   --content-width: 95vw;
   --ul-pad: 0px;
+  --menu-hidden-height: -40px;
   color: #F1FBFD;
   background-color: transparent;
 }
@@ -277,9 +278,9 @@ b {
 }
 #bar-menu {
   position: fixed;
-  top: 0;
+  top: var(--menu-hidden-height);
   width: 100%;
-  transition: top 0.3s;
+  transition: 0.5s;
   z-index: 2;
   display: flex;
   flex-direction: row;
@@ -291,9 +292,11 @@ b {
   flex-direction: row;
   align-items: center;
   min-width: 550px;
+  height: 100%;
+  background-color: #F1FBFD;
 }
 #bar-menu div a {
-  background-color: var(--background-color);
+  color: var(--background-color);
   text-align: center;
   display: inline-block;
   flex: 1;
@@ -312,11 +315,15 @@ b {
 #bar-menu .drop {
   display: none;
   flex: 0;
+  background-color: var(--background-color);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  padding: 5px 10px;
 }
 #bar-menu .drop div {
   min-width: 0px;
   width: 25px;
-  height: 3px;
+  height: 2px;
   background-color: var(--accent-color);
   margin: 6px 0;
   display: block;
@@ -451,6 +458,10 @@ body section.content {
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
 }
+.appear {
+  -webkit-transform: translateY(calc(-1 * var(--menu-hidden-height)));
+  transform: translateY(calc(-1 * var(--menu-hidden-height)));
+}
 @media only screen and (max-width: 480px) {
   :root {
     font-size: 10px;
@@ -506,8 +517,6 @@ body section.content {
   }
   #bar-menu .drop {
     display: block;
-    padding-left: 10px;
-    padding-right: 10px;
     max-width: 100px;
   }
 }

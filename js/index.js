@@ -262,13 +262,28 @@ $(document).ready(function() {
 
 */
 /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
-var prevScrollpos = window.pageYOffset;
+$.fn.isInViewport = function() {
+  var elementTop = $(this).offset().top;
+  var elementBottom = elementTop + $(this).outerHeight();
+
+  var viewportTop = $(window).scrollTop();
+  var viewportBottom = viewportTop + $(window).height();
+
+  return elementBottom > viewportTop && elementTop < viewportBottom;
+};
+
+var prevScrollPos = window.pageYOffset;
 window.onscroll = function() {
+  console.log(!$('.options').is(':visible'));
   var currentScrollPos = window.pageYOffset;
-  if (prevScrollpos > currentScrollPos) {
-    document.getElementById("bar-menu").style.top = "0";
+  if (currentScrollPos == 0)
+  {
+    $("#bar-menu").removeClass("appear");
+  } else if ((prevScrollPos > currentScrollPos) && !($('.options').isInViewport())) {
+    $("#bar-menu").addClass("appear");
   } else {
-    document.getElementById("bar-menu").style.top = "-50px";
+    $("#bar-menu").removeClass("appear");
   }
-  prevScrollpos = currentScrollPos;
+
+  prevScrollPos = currentScrollPos;
 }
