@@ -119,7 +119,7 @@ body {
   --pad-offset: 25px;
   --content-width: 95vw;
   --ul-pad: 0px;
-  --menu-hidden-height: -37px;
+  --menu-hidden-height: -44px;
   color: #F1FBFD;
   background-color: transparent;
 }
@@ -320,7 +320,7 @@ b {
 }
 #bar-menu .home {
   background-color: var(--accent-color);
-  font-size: 1rem;
+  font-size: 1.25rem;
   padding: 10px 1rem;
   width: 40%;
   height: 100%;
@@ -476,7 +476,7 @@ b {
     font-size: 10px;
   }
   body {
-    --menu-hidden-height: -31px;
+    --menu-hidden-height: -33px;
   }
 }
 @media only screen and (min-width: 784px) {
@@ -486,7 +486,7 @@ b {
   body {
     --content-width: 80vw;
     --ul-pad: 20%;
-    --menu-hidden-height: -40px;
+    --menu-hidden-height: -47px;
   }
   #main-menu {
     flex-direction: row-reverse;
@@ -529,7 +529,8 @@ b {
     width: 100%;
   }
   #bar-menu .drop {
-    display: block;
+    display: flex;
+    align-items: center;
     max-width: 100px;
   }
 }
@@ -543,5 +544,6 @@ b {
   body {
     --content-width: 70vw;
     --ul-pad: 30%;
+    --menu-hidden-height: -51px;
   }
 }
