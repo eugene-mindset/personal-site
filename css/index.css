@@ -117,7 +117,6 @@ body {
   --background-color: #25253D;
   --accent-color: #F53E8A;
   --pad-offset: 25px;
-  --content-offset: 250px;
   --content-width: 95vw;
   --ul-pad: 0px;
   color: #F1FBFD;
@@ -249,12 +248,14 @@ b {
   user-select: none;
 }
 .header {
-  padding: 1rem 1rem 1rem 1rem;
+  display: flex;
+  padding: 1rem 0rem 1rem 0rem;
+  width: 100%;
+  justify-content: center;
   font-weight: 900;
-  font-size: min(max(6vw, 1.25rem), 2.5rem);
   letter-spacing: 0.15rem;
+  font-size: min(max(6vw, 1.25rem), 2.5rem);
   text-overflow: ellipsis;
-  z-index: 5;
   background-color: var(--accent-color);
   color: var(--background-color);
 }
@@ -263,10 +264,64 @@ b {
   text-align: center;
 }
 .options {
+  margin-top: 15px;
   font-size: 1rem;
   text-align: center;
 }
-.menu {
+#main-menu {
+  padding: 0px;
+  margin: 0 auto;
+  letter-spacing: 0.005rem;
+  color: var(--text-color);
+  background: transparent;
+}
+#bar-menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: top 0.3s;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#bar-menu div {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-width: 550px;
+}
+#bar-menu div a {
+  background-color: var(--background-color);
+  text-align: center;
+  display: inline-block;
+  flex: 1;
+  padding: 10px;
+  width: 20%;
+}
+#bar-menu .home {
+  display: block;
+  background-color: var(--accent-color);
+  color: var(--background-color);
+  padding: 10px 1rem;
+  width: 40%;
+  font-weight: 900;
+  letter-spacing: 0.15rem;
+}
+#bar-menu .drop {
+  display: none;
+  flex: 0;
+}
+#bar-menu .drop div {
+  min-width: 0px;
+  width: 25px;
+  height: 3px;
+  background-color: var(--accent-color);
+  margin: 6px 0;
+  display: block;
+}
+body section.content {
   display: flex;
   flex-direction: column;
   -webkit-box-pack: center;
@@ -274,13 +329,6 @@ b {
   -webkit-box-align: center;
   align-items: center;
   min-height: 100vh;
-  padding: 0px;
-  margin: 0 auto;
-  letter-spacing: 0.005rem;
-  z-index: 3;
-  color: var(--text-color);
-  background: transparent;
-  overflow-wrap: break-word;
 }
 .footer {
   padding: 0.25rem;
@@ -304,20 +352,6 @@ b {
   padding: 0.25rem 0.25rem 0.4rem 0.25rem;
   margin-top: 0;
   font-size: 1rem;
-  /*
-  h1 {
-    position: fixed;
-    margin: ~"min(var(--pad-offset), -10px)";
-    z-index: -1;
-    color: var(--background-color);
-    background-color: var(--accent-color);
-    margin-left: calc((var(--content-width) - 100vw)/2);
-    font-size: 17.5vw;
-    width: 100vw;
-    opacity: 0.25;
-    text-align: center;
-  }
-  */
   width: var(--content-width);
 }
 .section {
@@ -430,13 +464,15 @@ b {
     --content-width: 80vw;
     --ul-pad: 20%;
   }
-  .menu {
+  #main-menu {
     flex-direction: row-reverse;
     align-items: center;
+    width: 100%;
   }
   .header {
-    margin-left: 15px;
-    width: 100%;
+    padding: 1rem 1rem 1rem 1rem;
+    justify-content: left;
+    width: 40%;
   }
   .header a {
     word-spacing: 100%;
@@ -450,12 +486,29 @@ b {
     text-align: left;
   }
   .options {
+    flex: 1;
     text-align: right;
-    min-width: fit-content;
-    margin-left: 100px;
+    min-width: 450px;
+    margin-left: 80px;
+    margin-right: 20px;
+    margin-top: 0px;
   }
   .grid-contain {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 783px) {
+  #bar-menu div {
+    display: none;
+  }
+  #bar-menu .home {
+    width: 100%;
+  }
+  #bar-menu .drop {
+    display: block;
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 100px;
   }
 }
 @media only screen and (min-width: 1280px) {

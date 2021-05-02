@@ -19,218 +19,235 @@
   <body>
     <script type="text/javascript" src="./js/index.js"></script>
 
-    <div class="menu">
+    <div id="bar-menu">
+      <div>
+        <a href="#edu" class="fancy">Education</a>
+        <a href="#exp" class="fancy">Experience</a>
+        <a href="#skll" class="fancy">Skills</a>
+        <a href="#proj" class="fancy">Projects</a>
+        <a href="#hobb" class="fancy">Hobbies</a>
+      </div>
+      <a class="home" href="#main-menu">EA</a>
+
+      <a class='drop'>
+        <div></div>
+        <div></div>
+        <div></div>
+      </a>
+    </div>
+
+    <section id="main-menu" class="content">
       <div class="header"><a id="home_link">eugene asare</a></div>
       <div class="options">
-        <p><a id="edu_link" class="fancy">education</a> at johns hopkins university</p>
-        <p>looking for opportunities and <a id="exp_link" class="fancy">experiences</a></p>
-        <p><a id="skll_link" class="fancy">skills</a> include of lot of programming languages</p>
-        <p>several software and machine learning <a id="proj_link" class="fancy">projects</a></p>
-        <p><a id="hobb_link" class="fancy">hobbies</a> include drawing and gaming</p>
+        <p><a id="edu_link" class="fancy" href="#edu">education</a> at johns hopkins university</p>
+        <p>looking for opportunities and <a id="exp_link" class="fancy" href="#exp">experiences</a></p>
+        <p><a id="skll_link" class="fancy" href="#skll">skills</a> include of lot of programming languages</p>
+        <p>several software and machine learning <a id="proj_link" class="fancy" href="#proj">projects</a></p>
+        <p><a id="hobb_link" class="fancy" href="#hobb">hobbies</a> include drawing and gaming</p>
         <p>social media and <a class="fancy">contacts</a></p>
       </div>
-    </div>
+    </section>
 
-    <div id="content">
-      <section id ="edu">
-        <h1>Education</h1>
-        <h4><a href="https://www.jhu.edu/" target="blank">Johns Hopkins University</a></h4>
-        <h5>Computer Science, B.S.</h5>
-        <p class="date_loc">Baltimore, Maryland</p>
-        <p class="date_loc">Aug 2017 —  May 2021</p>
-        <p class="highlight">Relevant Course Work</p>
-        <ul>
-          <li>Intermediate Programming <span class="hidden">EN.601.220</span></li>
-          <li>Data Structures <span class="hidden">EN.601.226</span></li>
-          <li>Automata &amp; Computation Theory <span class="hidden">EN.601.231</span></li>
-          <li>Computer System Fundamentals <span class="hidden">EN.601.229</span></li>
-          <li>Intro Algorithms <span class="hidden">EN.601.433</span></li>
-          <li>Computer Graphics <span class="hidden">EN.601.457</span></li>
-          <li>Artificial Intelligence <span class="hidden">EN.601.464</span></li>
-          <li>Machine Learning <span class="hidden">EN.601.475</span></li>
-          <li>Object Oriented Software Engineering <span class="hidden">EN.601.421</span></li>
-          <li>Computer Networks <span class="hidden">EN.601.414</span></li>
-          <li>Computer Vision <span class="hidden">EN.601.461</span></li>
-          <li>Machine Learning: Deep Learning <span class="hidden">EN.601.482</span></li>
-          <li>Databases <span class="hidden">EN.601.315</span></li>
-        </ul>
-        <br>
-        <a href="http://www.overbrookhs.com/" target="blank">Overbrook High School</a>
-        <span class="date_loc">Pine Hill, New Jersey</span><br>
-        <span>H.S. Diploma</span>
-        <span class="date_loc">Sept 2013 — June 2017</span><br>
-      </section>
 
-      <section id="exp">
-        <h1>Experience</h1>
+
+    <section id ="edu" class="content">
+      <h1>Education</h1>
+      <h4><a href="https://www.jhu.edu/" target="blank">Johns Hopkins University</a></h4>
+      <h5>Computer Science, B.S.</h5>
+      <p class="date_loc">Baltimore, Maryland</p>
+      <p class="date_loc">Aug 2017 —  May 2021</p>
+      <p class="highlight">Relevant Course Work</p>
+      <ul>
+        <li>Intermediate Programming <span class="hidden">EN.601.220</span></li>
+        <li>Data Structures <span class="hidden">EN.601.226</span></li>
+        <li>Automata &amp; Computation Theory <span class="hidden">EN.601.231</span></li>
+        <li>Computer System Fundamentals <span class="hidden">EN.601.229</span></li>
+        <li>Intro Algorithms <span class="hidden">EN.601.433</span></li>
+        <li>Computer Graphics <span class="hidden">EN.601.457</span></li>
+        <li>Artificial Intelligence <span class="hidden">EN.601.464</span></li>
+        <li>Machine Learning <span class="hidden">EN.601.475</span></li>
+        <li>Object Oriented Software Engineering <span class="hidden">EN.601.421</span></li>
+        <li>Computer Networks <span class="hidden">EN.601.414</span></li>
+        <li>Computer Vision <span class="hidden">EN.601.461</span></li>
+        <li>Machine Learning: Deep Learning <span class="hidden">EN.601.482</span></li>
+        <li>Databases <span class="hidden">EN.601.315</span></li>
+      </ul>
+      <br>
+      <a href="http://www.overbrookhs.com/" target="blank">Overbrook High School</a>
+      <span class="date_loc">Pine Hill, New Jersey</span><br>
+      <span>H.S. Diploma</span>
+      <span class="date_loc">Sept 2013 — June 2017</span><br>
+    </section>
+
+    <section id="exp" class="content">
+      <h1>Experience</h1>
+      <div>
         <div>
-          <div>
-            <h4>Course Assistant for Computer Networks</h4>
-            <h5>Johns Hopkins University</h5>
-            <span class="date_loc">Baltimore, Maryland</span><br>
-            <span class="date_loc">Jan 2021 — May 2021</span><br>
-            <ul>
-              <li>Assisted with instructing 75 students throughout the semester.</li>
-              <li>Managed and graded five programming assignments, as well as graded exams.</li>
-              <li>Hosted review sessions and weekly office hours to assist with understanding of network concepts and their implementation in C code.</li>
-            </ul>
-          </div>
-          <br>
-
-          <div>
-            <h4>Course Assistant for Computer Graphics</h4>
-            <h5>Johns Hopkins University</h5>
-            <span class="date_loc">Baltimore, Maryland</span><br>
-            <span class="date_loc">Sept 2020 — Dec 2020</span><br>
-            <ul>
-              <li>Assisted with instructing 30 students throughout the semester.</li>
-              <li>Graded the four projects of seven students during the course.</li>
-              <li>Held weekly office hours to help students implement concepts from lecture and debug C++ code.</li>
-            </ul>
-          </div>
-          <br>
-
-          <div>
-            <h4>Research Intern</h4>
-            <h5>CLSP at JHU</h5>
-            <span class="date_loc">Baltimore, Maryland</span><br>
-            <span class="date_loc">May 2020 — Aug 2020</span>
-            <ul>
-              <li>Tuned hyperparameters of our modified BERT model for an increase in model performance score by 5%</li>
-              <li>Created Python scripts used in final pipeline to make model robust against memory failures during training and evaluation.</li>
-              <li>Trained machine translation models to compare performance of the Arabic tokenizers Farasa and Madamira using Fairseq,
-                which had a BLEU score of 40.16 and 41.22, respectively</li>
-            </ul>
-          </div>
-          <br>
-
-          <div>
-            <h4>Course Assistant for Introductory Python Course</h4>
-            <h5>Johns Hopkins University</h5>
-            <span class="date_loc">Baltimore, Maryland</span><br>
-            <span class="date_loc">Jan 2020 — May 2020</span>
-            <ul>
-              <li>Assisted with instructing 150 students throughout the semester.</li>
-              <li>Created materials and hosted review sessions to prep students for their upcoming assessments.</li>
-              <li>Proctored assessments and project help sessions during lectures.</li>
-              <li>Held weekly office hours to assist students on programming difficulties surrounding Python.</li>
-            </ul>
-          </div>
-          <br>
+          <h4>Course Assistant for Computer Networks</h4>
+          <h5>Johns Hopkins University</h5>
+          <span class="date_loc">Baltimore, Maryland</span><br>
+          <span class="date_loc">Jan 2021 — May 2021</span><br>
+          <ul>
+            <li>Assisted with instructing 75 students throughout the semester.</li>
+            <li>Managed and graded five programming assignments, as well as graded exams.</li>
+            <li>Hosted review sessions and weekly office hours to assist with understanding of network concepts and their implementation in C code.</li>
+          </ul>
         </div>
-      </section>
+        <br>
 
-      <section class="section" id="skll">
-        <h1>Skills</h1>
-        <div class='grid-contain'>
-          <div class='fadeIn'>
-            <h4>Python</h4>
-            <ul>
-              <li>PyTorch</li>
-              <li>OpenCV</li>
-              <li>Gensim</li>
-              <li>Flask</li>
-            </ul>
-          </div>
+        <div>
+          <h4>Course Assistant for Computer Graphics</h4>
+          <h5>Johns Hopkins University</h5>
+          <span class="date_loc">Baltimore, Maryland</span><br>
+          <span class="date_loc">Sept 2020 — Dec 2020</span><br>
+          <ul>
+            <li>Assisted with instructing 30 students throughout the semester.</li>
+            <li>Graded the four projects of seven students during the course.</li>
+            <li>Held weekly office hours to help students implement concepts from lecture and debug C++ code.</li>
+          </ul>
+        </div>
+        <br>
 
-          <div>
-            <h4>JavaScript</h4>
-            <ul>
-              <li>JQuery</li>
-              <li>Node.js</li>
-              <li>React.js</li>
-            </ul>
-          </div>
+        <div>
+          <h4>Research Intern</h4>
+          <h5>CLSP at JHU</h5>
+          <span class="date_loc">Baltimore, Maryland</span><br>
+          <span class="date_loc">May 2020 — Aug 2020</span>
+          <ul>
+            <li>Tuned hyperparameters of our modified BERT model for an increase in model performance score by 5%</li>
+            <li>Created Python scripts used in final pipeline to make model robust against memory failures during training and evaluation.</li>
+            <li>Trained machine translation models to compare performance of the Arabic tokenizers Farasa and Madamira using Fairseq,
+              which had a BLEU score of 40.16 and 41.22, respectively</li>
+          </ul>
+        </div>
+        <br>
 
-          <div>
-            <h4>C/C++</h4>
-            <ul>
-              <li>OpenGL (GLFW, GLM, GLUT)</li>
-            </ul>
-          </div>
+        <div>
+          <h4>Course Assistant for Introductory Python Course</h4>
+          <h5>Johns Hopkins University</h5>
+          <span class="date_loc">Baltimore, Maryland</span><br>
+          <span class="date_loc">Jan 2020 — May 2020</span>
+          <ul>
+            <li>Assisted with instructing 150 students throughout the semester.</li>
+            <li>Created materials and hosted review sessions to prep students for their upcoming assessments.</li>
+            <li>Proctored assessments and project help sessions during lectures.</li>
+            <li>Held weekly office hours to assist students on programming difficulties surrounding Python.</li>
+          </ul>
+        </div>
+        <br>
+      </div>
+    </section>
 
-          <div>
-            <h4>C#</h4>
-          </div>
-
-          <div>
-            <h4>Java</h4>
-          </div>
-
-          <div>
-            <h4>Unity</h4>
-            <ul>
-              <li>OOP & ECS/DOTS</li>
-            </ul>
-          </div>
-
-          <div>
-            <h4>Git (&amp; GitFlow)</h4>
-          </div>
-
-          <div>
-            <h4>Visual Studio (&amp; Code)</h4>
-          </div>
-
-          <div>
-            <h4>Bash</h4>
-          </div>
-
-          <div>
-            <h4>Databases</h4>
-            <ul>
-              <li>MySQL</li>
-              <li>MongoDB</li>
-            </ul>
-          </div>
-
-          <div>
-            <h4>Google Cloud Platform</h4>
-          </div>
-
-          <div>
-            <h4>Linux (Debian)</h4>
-          </div>
-
-          <div>
-            <h4>HTML &amp; CSS</h4>
-          </div>
-
-          <div>
-            <h4>MATLAB</h4>
-          </div>
+    <section class="section" id="skll" class="content">
+      <h1>Skills</h1>
+      <div class='grid-contain'>
+        <div class='fadeIn'>
+          <h4>Python</h4>
+          <ul>
+            <li>PyTorch</li>
+            <li>OpenCV</li>
+            <li>Gensim</li>
+            <li>Flask</li>
+          </ul>
         </div>
 
-        <!--
-          <div class="col">
-            <span class="highlight">Other Technologies</span>
-            <ul>
-              <li>Visual Studio (&amp; Code)</li>
-              <li>Google Cloud Platform</li>
-              <li>Linux (Debian)</li>
-              <li>Git (&amp; GitFlow)</li>
-              <li>MySQL</li>
-              <li>MongoDB</li>
-              <li>JSON</li>
-              <li>XML</li>
-              <li>HTML/CSS</li>
-            </ul>
-          </div>
+        <div>
+          <h4>JavaScript</h4>
+          <ul>
+            <li>JQuery</li>
+            <li>Node.js</li>
+            <li>React.js</li>
+          </ul>
         </div>
-        -->
-      </section>
 
-      <section class="section" id="proj">
-        <h1>Projects</h1>
-        This is where the projects are...
-      </section>
+        <div>
+          <h4>C/C++</h4>
+          <ul>
+            <li>OpenGL (GLFW, GLM, GLUT)</li>
+          </ul>
+        </div>
 
-      <section class="section" id="hobb">
-        <h1>Hobbies</h1>
-        This is where the hobbies are...
-      </section>
+        <div>
+          <h4>C#</h4>
+        </div>
 
-    </div>
+        <div>
+          <h4>Java</h4>
+        </div>
+
+        <div>
+          <h4>Unity</h4>
+          <ul>
+            <li>OOP & ECS/DOTS</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Git (&amp; GitFlow)</h4>
+        </div>
+
+        <div>
+          <h4>Visual Studio (&amp; Code)</h4>
+        </div>
+
+        <div>
+          <h4>Bash</h4>
+        </div>
+
+        <div>
+          <h4>Databases</h4>
+          <ul>
+            <li>MySQL</li>
+            <li>MongoDB</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Google Cloud Platform</h4>
+        </div>
+
+        <div>
+          <h4>Linux (Debian)</h4>
+        </div>
+
+        <div>
+          <h4>HTML &amp; CSS</h4>
+        </div>
+
+        <div>
+          <h4>MATLAB</h4>
+        </div>
+      </div>
+
+      <!--
+        <div class="col">
+          <span class="highlight">Other Technologies</span>
+          <ul>
+            <li>Visual Studio (&amp; Code)</li>
+            <li>Google Cloud Platform</li>
+            <li>Linux (Debian)</li>
+            <li>Git (&amp; GitFlow)</li>
+            <li>MySQL</li>
+            <li>MongoDB</li>
+            <li>JSON</li>
+            <li>XML</li>
+            <li>HTML/CSS</li>
+          </ul>
+        </div>
+      </div>
+      -->
+    </section>
+
+    <section class="section" id="proj" class="content">
+      <h1>Projects</h1>
+      This is where the projects are...
+    </section>
+
+    <section class="section" id="hobb" class="content">
+      <h1>Hobbies</h1>
+      This is where the hobbies are...
+    </section>
+
 
   </body>
 </html>

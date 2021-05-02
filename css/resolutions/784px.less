@@ -8,12 +8,17 @@
     --ul-pad: 20%;
   }
 
-  .menu {
+  #main-menu {
     flex-direction: row-reverse;
     align-items: center;
+    width: 100%;
   }
 
   .header {
+    padding: 1rem 1rem 1rem 1rem;
+    justify-content: left;
+    width: 40%;
+
     a {
       word-spacing: 100%;
       width: min-intrinsic;
@@ -26,18 +31,36 @@
 
       text-align: left;
     }
-
-    margin-left: 15px;
-    width: 100%;
   }
 
   .options {
+    flex: 1;
     text-align: right;
-    min-width: max-content;
-    margin-left: 100px;
+    min-width: 450px;
+    margin-left: 80px;
+    margin-right: 20px;
+    margin-top: 0px;
   }
 
   .grid-contain {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+
+@media only screen and (max-width: 783px) {
+  #bar-menu div {
+    display: none;
+  }
+
+  #bar-menu .home {
+    width: 100%;
+  }
+
+  #bar-menu .drop {
+    display: block;
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 100px;
   }
 }
