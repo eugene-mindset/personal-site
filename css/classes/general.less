@@ -62,7 +62,7 @@
   padding: 0;
 
   a {
-    --accent-color: var(--background-color);
+    color: var(--background-color);
   }
 
 
@@ -73,6 +73,8 @@
   flex-direction: row;
   align-items: stretch;
   align-content: stretch;
+
+  
 }
 
 #bar-menu .options {
@@ -81,28 +83,33 @@
   flex-direction: row;
   align-items: center;
   min-width: 550px;
-  min-height: calc(20px + 20px);
-
   background-color: @background-color-1;
+
+  align-items: stretch;
+  align-content: stretch;
+  justify-content: stretch;
 }
 
 #bar-menu .options a {
   color: var(--background-color);
   text-align: center;
-  display: block;
-  flex: 1;
-  padding: 10px;
+  display: inline-block;
+  padding: 15px;
   width: 20%;
-  min-height: 1rem;
   font-weight: 400;
   font-size: 0.8rem;
+  transition: color 0.3s;
+  transition: background-color 0.3s;
+}
+
+#bar-menu .options a:hover {
+  background-color: var(--accent-color);
 }
 
 #bar-menu .home {
   a {
     display: block;
-  }
-
+  } 
   background-color: var(--accent-color);
 
   font-size: 1.25rem;
@@ -156,17 +163,15 @@
 #content {
   flex: 0 0 auto;
 
-  padding: 0.25rem 0.25rem 0.4rem 0.25rem;
-
   margin-top: 0;
   font-size: 1rem;
-
-
-  width: var(--content-width);
-}
-
-.section {
   flex-direction: column;
+  align-items: center;
+
+  section {
+    max-width: var(--content-width);
+    margin: auto;
+  }
 }
 
 .hidden {

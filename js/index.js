@@ -278,7 +278,7 @@ window.onscroll = function() {
   if (currentScrollPos == 0)
   {
     $("#bar-menu").removeClass("appear");
-  } else if ((prevScrollPos > currentScrollPos) && !($('#main-menu .options').isInViewport())) {
+  } else if ((prevScrollPos > currentScrollPos) /*&& !($('#main-menu .options').isInViewport())*/) {
     $("#bar-menu").addClass("appear");
   } else {
     $("#bar-menu").removeClass("appear");
@@ -286,3 +286,15 @@ window.onscroll = function() {
 
   prevScrollPos = currentScrollPos;
 }
+
+$(document).ready(function() {
+  $('#bar-menu .drop').click(function(event) {
+    $('#bar-menu .options').toggleClass('dropdown');
+    event.stopPropagation();
+  });
+});
+
+
+document.addEventListener('click', (event) => {
+  $("#bar-menu .options").removeClass("dropdown");
+});
